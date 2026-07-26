@@ -7,7 +7,7 @@ import { FaFacebook } from 'react-icons/fa'
 
 function HeroSection() {
   return (
-    <section className="flex flex-col items-center text-center gap-4 py-16 px-4">
+    <section className="flex flex-col items-center pt-20 text-center gap-4 py-16 px-4">
       <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center text-sm text-gray-500">
         Photo
       </div>
