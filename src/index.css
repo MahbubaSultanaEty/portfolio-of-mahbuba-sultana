@@ -1,6 +1,59 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #1a1a1a;
-  --color-accent: #4b3f72;
+  --color-ink: #1A1A1A;
+  --color-accent: #4B3F72;
+  --color-secondary: #2F6B5E;
+  --color-surface: #F7F6F2;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var(--color-ink);
+  background-color: #FAFAFA;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Ambient Radial Mesh Background */
+.bg-mesh-pattern {
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(75, 63, 114, 0.08) 0px, transparent 50%),
+    radial-gradient(at 90% 20%, rgba(47, 107, 94, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(75, 63, 114, 0.06) 0px, transparent 50%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4B3F72;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #382f56;
 }
