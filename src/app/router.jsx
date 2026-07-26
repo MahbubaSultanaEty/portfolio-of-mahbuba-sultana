@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 import HomePage from '../pages/HomePage'
+import ProjectDetailPage from '../pages/ProjectDetailPage'
 
 export const router = createBrowserRouter([
   {
@@ -8,6 +9,6 @@ export const router = createBrowserRouter([
   },
   {
     path: '/projects/:slug',
-    element: <div>Project detail page placeholder</div>,
+    element: <ProjectDetailPage />,
   },
 ])

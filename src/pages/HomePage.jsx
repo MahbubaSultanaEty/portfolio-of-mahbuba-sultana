@@ -9,6 +9,7 @@ import AboutSection from '../components/AboutSection'
 import SkillsSection from '../components/SkillsSection'
 import EducationSection from '../components/EducationSection'
 import ProjectsSection from '../components/ProjectSection'
+import ContactSection from '../components/ContactSection'
 
 function HomePage() {
   return (
@@ -20,6 +21,7 @@ function HomePage() {
       <SkillsSection/>
       <EducationSection/>
       <ProjectsSection/>
+      <ContactSection/>
       {changelog.map((entry) => (
         <section key={entry.section} style={{ padding: '40px 0', borderBottom: '1px solid #ccc' }}>
           <VersionTag version={entry.version} label={entry.label} />
