@@ -3,10 +3,10 @@ import { skills } from '../data/skills'
 
 function SkillsSection() {
   return (
-    <section id="skills" className="max-w-4xl mx-auto px-6 py-24">
-      <VersionTag version="v0.4" label="toolkit assembled" />
+    <section id="skills" className="max-w-5xl mx-auto px-6 py-24">
+  <VersionTag version="v0.4" label="toolkit assembled" />
 
-      <div className="mt-8 space-y-10">
+  <div className="mt-8 grid md:grid-cols-3 gap-10">
         {/* Frontend — largest, most prominent */}
         <div>
           <div className="flex items-baseline gap-2 mb-3">

@@ -9,7 +9,7 @@ const paragraphs = [
 
 function StorySection() {
   return (
-    <section id="story" className="max-w-2xl mx-auto px-6 py-24">
+    <section id="story" className="max-w-3xl mx-auto px-6 py-16">
       <VersionTag version="v0.1 → v0.2" label="the turning point" />
 
       <div className="mt-6 space-y-6">
