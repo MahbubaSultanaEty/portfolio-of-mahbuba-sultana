@@ -10,33 +10,34 @@ function ProjectCard({ project, index = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col h-full shadow-sm hover:shadow-xl hover:border-accent/40 transition-all duration-300 group"
+      className="bg-[#141022]/90 rounded-3xl border border-white/10 overflow-hidden flex flex-col h-full shadow-lg hover:shadow-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group"
     >
-      <div className="h-48 bg-gray-100 overflow-hidden relative">
+      <div className="h-52 bg-[#0D0B14] overflow-hidden relative border-b border-white/10">
         <img
           src={project.image}
           alt={project.name}
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-          <span className="text-white text-xs font-semibold tracking-wide">Click card to explore details</span>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B14] via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity flex items-end p-4">
+          <span className="text-purple-200 text-xs font-mono tracking-wide">Explore Case Study & Details →</span>
         </div>
       </div>
 
       <div className="p-6 flex flex-col flex-1 justify-between">
         <div>
-          <div className="flex items-start justify-between gap-2 mb-2">
-            <h3 className="font-bold text-ink text-xl group-hover:text-accent transition-colors">
+          <div className="flex items-start justify-between gap-2 mb-3">
+            <h3 className="font-bold text-white text-xl group-hover:text-purple-300 transition-colors">
               {project.name}
             </h3>
-            <div className="flex items-center gap-1.5 text-gray-500">
+            <div className="flex items-center gap-2 text-gray-400">
               {project.live && (
                 <a
                   href={project.live}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-1.5 rounded-lg hover:bg-surface hover:text-accent transition-colors"
+                  className="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-purple-500/20 hover:text-purple-300 transition-all"
                   aria-label="Live Demo"
+                  title="Live Demo"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <ExternalLink size={16} />
@@ -47,8 +48,9 @@ function ProjectCard({ project, index = 0 }) {
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-1.5 rounded-lg hover:bg-surface hover:text-ink transition-colors"
+                  className="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:text-white transition-all"
                   aria-label="GitHub Repository"
+                  title="Source Code"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <DiGithub size={18} />
@@ -57,7 +59,7 @@ function ProjectCard({ project, index = 0 }) {
             </div>
           </div>
 
-          <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+          <p className="text-gray-300 text-sm leading-relaxed mb-4 font-light line-clamp-3">
             {project.description}
           </p>
         </div>
@@ -67,7 +69,7 @@ function ProjectCard({ project, index = 0 }) {
             {project.tech.map((tech) => (
               <span
                 key={tech}
-                className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-surface text-gray-700 border border-gray-200"
+                className="text-[11px] font-mono font-medium px-3 py-1 rounded-full bg-white/5 text-purple-200 border border-white/10"
               >
                 {tech}
               </span>
@@ -76,9 +78,9 @@ function ProjectCard({ project, index = 0 }) {
 
           <Link
             to={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-purple-300 hover:text-purple-200 hover:gap-3 transition-all"
           >
-            View Details & Case Study
+            View Details & Technical Case Study
             <ArrowRight size={16} />
           </Link>
         </div>
@@ -87,4 +89,5 @@ function ProjectCard({ project, index = 0 }) {
   )
 }
 
-export default ProjectCard
+export default ProjectCard
+

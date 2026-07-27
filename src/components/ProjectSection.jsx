@@ -6,11 +6,11 @@ import { BsGithub } from 'react-icons/bs'
 
 function ProjectsSection() {
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-6 py-24">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+    <section id="projects" className="max-w-6xl mx-auto px-6 py-16">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 border-b border-white/10 pb-6">
         <div>
           <VersionTag version="v1.0 → v1.3" label="shipped" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-ink tracking-tight mt-3">
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3">
             Featured Projects & Applications
           </h2>
         </div>
@@ -18,10 +18,10 @@ function ProjectsSection() {
           href={profile.socials.github}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2.5 text-xs font-bold text-white bg-accent px-5 py-2.5 rounded-full hover:bg-accent/90 transition-all shadow-md hover:shadow-lg"
+          className="inline-flex items-center gap-2.5 text-xs font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 border border-purple-400/30 px-6 py-3 rounded-full hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg hover:shadow-purple-500/25 hover:-translate-y-0.5"
         >
           <BsGithub size={16} />
-          View All Code on GitHub →
+          View All Repositories on GitHub →
         </a>
       </div>
 
@@ -35,4 +35,5 @@ function ProjectsSection() {
 }
 
 export default ProjectsSection
+
 

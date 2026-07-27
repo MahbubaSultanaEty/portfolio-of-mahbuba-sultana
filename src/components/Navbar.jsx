@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Menu, X, FileText } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import avatarImg from '../assets/avatar.png'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,14 +18,17 @@ function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200/80 z-40 transition-all duration-300">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3.5">
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-sm group-hover:scale-105 transition-transform">
-            MS
-          </div>
+        <a href="#" className="flex items-center gap-3 group">
+          <img
+            src={avatarImg}
+            alt="Mahbuba Sultana Logo"
+            className="w-9 h-9 rounded-full object-cover border-2 border-accent/40 shadow-sm group-hover:scale-105 group-hover:border-accent transition-all"
+          />
           <span className="font-bold text-ink text-lg tracking-tight group-hover:text-accent transition-colors">
             Mahbuba Sultana
           </span>
         </a>
+
 
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-gray-600">
           {links.map((link) => (
