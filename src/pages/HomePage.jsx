@@ -34,7 +34,7 @@ function HomePage() {
         </div>
 
         {/* FEATURED SECTIONS WITH DARK FUTURISTIC SHIULI AMBIENCE */}
-        <div className="relative bg-[#0D0B14] space-y-12 py-12">
+        <div className="relative bg-[#0D0B14] space-y-10 py-12">
           {/* Story Section */}
           <div className="relative z-10">
             <StorySection />

@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { ExternalLink, ArrowLeft, CheckCircle2, AlertCircle } from 'lucide-react'
+import { ExternalLink, ArrowLeft, CheckCircle2, AlertCircle, Sparkles } from 'lucide-react'
 import { projects } from '../data/projects'
 import { DiGithub } from 'react-icons/di'
 
@@ -19,112 +19,256 @@ function ProjectDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-ink py-16 px-6">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-white text-ink relative overflow-hidden py-16 px-6">
+
+      {/* Background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 
+        w-[500px] h-[300px] bg-purple-200/30 blur-3xl rounded-full" />
+
+
+      <div className="relative max-w-5xl mx-auto">
+
+        {/* Back button */}
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-accent transition-colors mb-8 bg-surface px-4 py-2 rounded-full border border-gray-200"
+          className="
+          inline-flex items-center gap-2 mb-10
+          text-sm font-semibold text-gray-600
+          bg-white border border-gray-200
+          px-5 py-2.5 rounded-full
+          hover:text-purple-600 hover:border-purple-300
+          transition-all shadow-sm
+          "
         >
-          <ArrowLeft size={16} />
-          Back to all projects
+          <ArrowLeft size={16}/>
+          Back to projects
         </Link>
 
-        <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-lg mb-8 max-h-[450px]">
+
+        {/* Screenshot */}
+        <div
+          className="
+          rounded-[2rem] overflow-hidden
+          border border-purple-100
+          shadow-[0_20px_60px_rgba(124,58,237,0.12)]
+          bg-white
+          mb-10
+          "
+        >
           <img
             src={project.image}
             alt={project.name}
-            className="w-full h-full object-cover object-top"
+            className="
+            w-full
+            max-h-[600px]
+            object-cover
+            object-top
+            "
           />
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-ink tracking-tight">
-            {project.name}
-          </h1>
 
-          <div className="flex items-center gap-3">
+
+        {/* Header */}
+        <div className="flex flex-col md:flex-row justify-between gap-6 mb-6">
+
+
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <Sparkles size={16} className="text-purple-500"/>
+              <span className="text-xs uppercase tracking-[0.25em] font-semibold text-purple-600">
+                Featured Project
+              </span>
+            </div>
+
+
+            <h1 className="
+            text-4xl md:text-5xl 
+            font-extrabold 
+            tracking-tight
+            text-gray-900
+            ">
+              {project.name}
+            </h1>
+
+          </div>
+
+
+
+          <div className="flex gap-3 items-start flex-wrap">
+
+
             {project.live && (
               <a
                 href={project.live}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 bg-accent text-white text-sm font-semibold rounded-full px-5 py-2.5 hover:bg-accent/90 transition-all shadow-md"
+                className="
+                flex items-center gap-2
+                bg-purple-600 text-white
+                px-5 py-2.5 rounded-full
+                font-semibold text-sm
+                hover:bg-purple-700
+                transition-all shadow-md
+                "
               >
-                <ExternalLink size={16} />
+                <ExternalLink size={16}/>
                 Live Demo
               </a>
             )}
+
+
+
             {project.github && (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-gray-300 text-gray-800 text-sm font-semibold rounded-full px-5 py-2.5 hover:bg-gray-100 transition-colors"
+                className="
+                flex items-center gap-2
+                border border-gray-300
+                px-5 py-2.5 rounded-full
+                font-semibold text-sm
+                hover:bg-gray-100
+                transition-all
+                "
               >
-                <DiGithub size={18} />
-                GitHub Code
+                <DiGithub size={18}/>
+                Source
               </a>
             )}
+
           </div>
+
         </div>
 
-        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+
+
+        <p className="
+        text-gray-600 
+        text-lg 
+        leading-relaxed 
+        max-w-3xl
+        mb-8
+        ">
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-10 pb-8 border-b border-gray-200">
-          {project.tech.map((tech) => (
+
+
+        {/* Tech */}
+        <div className="
+        flex flex-wrap gap-3 
+        pb-10 mb-10
+        border-b border-gray-200
+        ">
+
+          {project.tech.map((tech)=>(
             <span
               key={tech}
-              className="text-xs font-semibold px-3 py-1.5 rounded-full bg-accent/10 text-accent border border-accent/20"
+              className="
+              px-4 py-2
+              rounded-full
+              text-sm font-semibold
+              bg-purple-50
+              text-purple-700
+              border border-purple-200
+              "
             >
               {tech}
             </span>
           ))}
+
         </div>
+
+
+
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Challenges */}
-          {project.challenges && project.challenges.length > 0 && (
-            <div className="bg-surface rounded-2xl p-6 md:p-8 border border-gray-200 shadow-sm">
-              <div className="flex items-center gap-2 mb-4 text-accent">
-                <AlertCircle size={20} />
-                <h2 className="text-xl font-bold text-ink">Technical Challenges</h2>
+
+
+          {project.challenges?.length > 0 && (
+            <div
+              className="
+              rounded-3xl
+              p-7
+              bg-gradient-to-br from-purple-50 to-white
+              border border-purple-100
+              "
+            >
+
+              <div className="flex items-center gap-3 mb-5">
+                <div className="p-2 rounded-xl bg-purple-100 text-purple-600">
+                  <AlertCircle size={20}/>
+                </div>
+
+                <h2 className="font-bold text-xl">
+                  Technical Challenges
+                </h2>
               </div>
-              <ul className="space-y-3">
-                {project.challenges.map((item, index) => (
+
+
+              <ul className="space-y-4">
+                {project.challenges.map((item,index)=>(
                   <li
                     key={index}
-                    className="text-gray-700 text-sm leading-relaxed pl-4 border-l-2 border-accent/40"
+                    className="text-gray-600 text-sm leading-relaxed"
                   >
-                    {item}
+                    • {item}
                   </li>
                 ))}
               </ul>
+
             </div>
           )}
 
-          {/* Improvements */}
-          {project.improvements && project.improvements.length > 0 && (
-            <div className="bg-surface rounded-2xl p-6 md:p-8 border border-gray-200 shadow-sm">
-              <div className="flex items-center gap-2 mb-4 text-secondary">
-                <CheckCircle2 size={20} />
-                <h2 className="text-xl font-bold text-ink">Future Improvements</h2>
+
+
+
+
+          {project.improvements?.length > 0 && (
+            <div
+              className="
+              rounded-3xl
+              p-7
+              bg-gradient-to-br from-green-50 to-white
+              border border-green-100
+              "
+            >
+
+              <div className="flex items-center gap-3 mb-5">
+
+                <div className="p-2 rounded-xl bg-green-100 text-green-600">
+                  <CheckCircle2 size={20}/>
+                </div>
+
+                <h2 className="font-bold text-xl">
+                  Future Improvements
+                </h2>
+
               </div>
-              <ul className="space-y-3">
-                {project.improvements.map((item, index) => (
+
+
+              <ul className="space-y-4">
+                {project.improvements.map((item,index)=>(
                   <li
                     key={index}
-                    className="text-gray-700 text-sm leading-relaxed pl-4 border-l-2 border-secondary/40"
+                    className="text-gray-600 text-sm leading-relaxed"
                   >
-                    {item}
+                    • {item}
                   </li>
                 ))}
               </ul>
+
+
             </div>
           )}
+
         </div>
+
+
       </div>
+
     </div>
   )
 }

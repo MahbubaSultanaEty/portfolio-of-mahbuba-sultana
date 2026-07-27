@@ -5,6 +5,10 @@ import { DiGithub } from 'react-icons/di'
 
 function ProjectCard({ project, index = 0 }) {
   return (
+     <Link
+            to={`/projects/${project.slug}`}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-purple-300 hover:text-purple-200 hover:gap-3 transition-all"
+          >
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -12,6 +16,7 @@ function ProjectCard({ project, index = 0 }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="bg-[#141022]/90 rounded-3xl border border-white/10 overflow-hidden flex flex-col h-full shadow-lg hover:shadow-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group"
     >
+     
       <div className="h-52 bg-[#0D0B14] overflow-hidden relative border-b border-white/10">
         <img
           src={project.image}
@@ -84,10 +89,12 @@ function ProjectCard({ project, index = 0 }) {
             <ArrowRight size={16} />
           </Link>
         </div>
-      </div>
-    </motion.div>
+        </div>
+       
+      </motion.div>
+       </Link>
   )
 }
 
 export default ProjectCard
-
+

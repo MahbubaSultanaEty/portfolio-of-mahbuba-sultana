@@ -12,7 +12,7 @@ export const skills = {
       heading: "Backend",
       note: "Strong Working understanding",
       items: [
-        "Node.js", "Express.js", "MongoDB", "Mongoose",
+        "Node.js", "Express.js", "BetterAuth", "MongoDB", "Mongoose",
         "REST APIs", "Authentication", "JWT", "Stripe Integration",
       ],
     },

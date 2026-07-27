@@ -5,37 +5,61 @@ import { profile } from '../data/profile'
 import { BsGithub } from 'react-icons/bs'
 import { LiaLinkedin } from 'react-icons/lia'
 import { FaFacebook } from 'react-icons/fa'
-import { SiReact, SiNextdotjs, SiTailwindcss, SiJavascript } from 'react-icons/si'
+import { SiReact, SiNextdotjs, SiTailwindcss, SiJavascript, SiNodedotjs, SiExpress, SiMongodb, SiBetterauth } from 'react-icons/si'
 import heroPhoto from '../assets/mahbuba-sultana.png'
 import avatarImg from '../assets/avatar.png'
 
 function HeroSection() {
-  const floatingTech = [
-    {
-      icon: <SiReact className="text-[#61DAFB]" size={22} />,
-      label: 'React.js Specialist',
-      pos: '-top-4 -left-6 sm:-left-10',
-      delay: 0,
-    },
-    {
-      icon: <SiNextdotjs className="text-black" size={22} />,
-      label: 'Next.js & Full-Stack',
-      pos: 'top-10 -right-6 sm:-right-12',
-      delay: 1,
-    },
-    {
-      icon: <SiTailwindcss className="text-[#06B6D4]" size={22} />,
-      label: 'Tailwind CSS',
-      pos: 'bottom-16 -left-6 sm:-left-12',
-      delay: 2,
-    },
-    {
-      icon: <SiJavascript className="text-[#F7DF1E]" size={22} />,
-      label: 'JavaScript Core',
-      pos: '-bottom-6 right-2 sm:right-6',
-      delay: 1.5,
-    },
-  ]
+ const floatingTech = [
+  {
+    icon: <SiJavascript className="text-[#F7DF1E]" size={22} />,
+    label: 'JavaScript',
+    pos: '-top-4 -left-6 sm:-left-10',
+    delay: 0,
+  },
+  {
+    icon: <SiBetterauth className="text-black" size={22} />,
+    label: 'BetterAuth',
+    pos: 'top-12 -left-6 sm:-left-10',
+    delay: 0,
+  },
+  {
+    icon: <SiReact className="text-[#61DAFB]" size={22} />,
+    label: 'React.js',
+    pos: 'top-10 -right-6 sm:-right-12',
+    delay: 1,
+  },
+  {
+    icon: <SiNextdotjs className="text-black" size={22} />,
+    label: 'Next.js',
+    pos: 'bottom-16 -left-6 sm:-left-12',
+    delay: 2,
+  },
+  {
+    icon: <SiNodedotjs className="text-[#339933]" size={22} />,
+    label: 'Node.js',
+    pos: '-bottom-6 right-2 sm:right-6',
+    delay: 1.5,
+  },
+  {
+    icon: <SiExpress className="text-gray-800" size={22} />,
+    label: 'Express.js',
+    pos: 'top-1/2 -right-8 sm:-right-14',
+    delay: 0.5,
+  },
+  {
+    icon: <SiMongodb className="text-[#47A248]" size={22} />,
+    label: 'MongoDB',
+    pos: 'bottom-2 left-1/2',
+    delay: 2.5,
+  },
+  {
+    icon: <SiTailwindcss className="text-[#06B6D4]" size={22} />,
+    label: 'Tailwind CSS',
+    pos: 'top-1/2 -left-10',
+    delay: 1.8,
+  },
+]
 
   return (
     <section className="relative overflow-hidden pt-10 pb-20 px-6 max-w-6xl mx-auto">
@@ -181,7 +205,7 @@ function HeroSection() {
                 className={`absolute ${tech.pos} z-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-gray-200 shadow-xl flex items-center gap-2.5 text-xs font-bold text-ink hidden sm:flex hover:scale-105 transition-transform`}
               >
                 {tech.icon}
-                <span>{tech.label}</span>
+                <span>{tech?.label}</span>
               </motion.div>
             ))}
 
