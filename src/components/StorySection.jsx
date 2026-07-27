@@ -13,7 +13,7 @@ const storySteps = [
     version: 'v0.2',
     label: 'The Catalyst',
     icon: <Lightbulb className="w-5 h-5 text-amber-400" />,
-    text: `That changed in September 2025. I wanted to swap the "o" in "October" for a small flower in a photo. Asking how led me to a bigger question: could someone with zero background learn to code from a phone? The answer was freeCodeCamp.`,
+    text: `In September 2025, I wanted to edit a "Shiuli" flower photo replacing the middle “o” in the word “October” with a small flower, and while exploring how to do it, ChatGPT introduced me to coding and image tools. That led me to ask if someone with no technical background could actually learn programming. The answer was yes — and I started my journey with freeCodeCamp, beginning from zero.`,
   },
   {
     version: 'v0.3',
