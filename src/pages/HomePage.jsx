@@ -62,6 +62,11 @@ function HomePage() {
             <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
           </div>
 
+          {/* Projects Section */}
+          <div className="relative z-10">
+            <ProjectsSection />
+          </div>
+
           {/* Education Section */}
           <div className="relative z-10">
             <EducationSection />
@@ -71,10 +76,7 @@ function HomePage() {
             <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
           </div>
 
-          {/* Projects Section */}
-          <div className="relative z-10">
-            <ProjectsSection />
-          </div>
+          
         </div>
 
         {/* CONTACT SECTION */}
@@ -88,4 +90,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default HomePage
