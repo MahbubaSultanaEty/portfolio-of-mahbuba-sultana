@@ -84,7 +84,7 @@ function StorySection() {
 
             <div className="flex items-center gap-3 mb-4">
 
-              <span className="badge badge-primary badge-outline">
+              <span className="badge badge-success badge-outline">
                 My Journey
               </span>
 
@@ -150,11 +150,12 @@ function StorySection() {
                   }}
                   className="
                   card
-                  bg-card/80
+                  bg-card/70
                   backdrop-blur-xl
                   border
                   border-white/10
-                  hover:border-primary/40
+                  hover:border-emerald
+                  
                   "
                 >
 
@@ -182,7 +183,7 @@ function StorySection() {
 
 
 
-                      <span className="badge badge-outline text-primary">
+                      <span className="badge badge-outline text-emerald-700">
                         0{index+1}
                       </span>
 

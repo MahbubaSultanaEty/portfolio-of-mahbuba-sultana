@@ -81,9 +81,9 @@ function ProjectsSection() {
             <span
               className="
               bg-gradient-to-r
-              from-primary
+              from-emerald-500
               via-purple-400
-              to-secondary
+              to-green-300
               bg-clip-text
               text-transparent
               "

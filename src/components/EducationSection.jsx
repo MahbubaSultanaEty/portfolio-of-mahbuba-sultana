@@ -36,7 +36,7 @@ function EducationSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: catIdx * 0.1 }}
             whileHover={{ y: -6 }}
-            className="bg-[#141022]/90 rounded-3xl border border-white/10 p-6 shadow-lg hover:shadow-purple-500/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between"
+            className="bg-[#141022]/90 rounded-3xl border border-green-400/10 p-6 shadow-lg hover:shadow-purple-500/10 hover:border-green-500/40 transition-all duration-300 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
@@ -55,9 +55,9 @@ function EducationSection() {
                 {category.items.map((entry) => (
                   <div
                     key={entry.title}
-                    className="border-l-2 border-purple-500/50 pl-4 relative group"
+                    className="border-l-2 border-emerald-500/50 pl-4 relative group"
                   >
-                    <span className="inline-block text-[11px] font-bold text-purple-300 bg-purple-500/15 rounded-full px-3 py-1 mb-2 font-mono">
+                    <span className="inline-block text-[11px] font-bold text-purple-300 bg-emerald-500/15 rounded-full px-3 py-1 mb-2 font-mono">
                       {entry.period}
                     </span>
                     <h4 className="text-base font-bold text-white group-hover:text-purple-300 transition-colors">

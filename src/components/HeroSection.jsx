@@ -229,11 +229,12 @@ function HeroSection() {
             <span
               className="
               bg-gradient-to-r
-              from-primary
-              via-purple-400
-              to-secondary
+              from-emerald-500
+              via-indigo-500
+              to-emerald-700
               bg-clip-text
               text-transparent
+              
               "
             >
               Web Applications
@@ -304,7 +305,7 @@ function HeroSection() {
               inline-flex
               items-center
               gap-2.5
-              bg-primary
+              bg-emerald-700
               text-white
               px-8
               py-4
@@ -314,7 +315,7 @@ function HeroSection() {
               transition-all
               shadow-[0_0_30px_rgba(124,58,237,0.35)]
               hover:-translate-y-1
-              hover:bg-primary/90
+              hover:bg-emerald-600
               group
               "
             >

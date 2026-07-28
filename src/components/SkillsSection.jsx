@@ -66,7 +66,7 @@ function SkillsSection() {
         </div>
 
         <div className="flex gap-2 items-start">
-          <span className="px-4 py-2 rounded-lg bg-primary/20 border border-primary/40 text-primary text-xs font-bold">
+          <span className="px-4 py-2 rounded-lg bg-emerald-600/20 border border-emerald/40 text-emerald-600 text-xs font-bold">
             Frontend Focus
           </span>
           <span className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-400 text-xs">
@@ -87,11 +87,11 @@ function SkillsSection() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="bg-card/80 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl"
+              className="bg-card/80 border border-green-600/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl"
             >
               <div className="flex items-center gap-4 mb-7">
                 <div className="p-3 rounded-xl bg-primary/10 border border-primary/20">
-                  <Icon className="w-5 h-5 text-primary" />
+                  <Icon className="w-5 h-5 text-emerald-600" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">{section.title}</h3>
@@ -139,7 +139,7 @@ function SkillsSection() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mt-8 bg-card/80 border border-white/10 rounded-3xl p-6 backdrop-blur-xl flex flex-col sm:flex-row items-center gap-6"
+        className="mt-8 bg-card/80 border border-white/50 rounded-3xl p-6 backdrop-blur-xl flex flex-col sm:flex-row items-center gap-6"
       >
         <div className="w-full sm:w-52 h-40 rounded-2xl overflow-hidden border border-white/10 flex-shrink-0">
           <img src="/shiuly-3.jpg" alt="Shiuli flower" className="w-full h-full object-cover" />

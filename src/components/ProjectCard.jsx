@@ -385,7 +385,7 @@ function ProjectCard({ project, index = 0 }) {
             gap-2
             text-sm
             font-bold
-            text-primary
+            text-emerald-600
             hover:text-secondary
             transition-all
             group/link

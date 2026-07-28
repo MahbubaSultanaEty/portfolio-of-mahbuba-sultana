@@ -62,7 +62,7 @@ function Stats() {
         font-black
         text-foreground
         bg-gradient-to-r
-        from-primary
+        from-emerald-600
         to-secondary
         bg-clip-text
         text-transparent
