@@ -11,6 +11,7 @@ import Footer from '../components/Footer'
 
 function HomePage() {
   const { scrollYProgress } = useScroll()
+
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -18,74 +19,128 @@ function HomePage() {
   })
 
   return (
-    <div className="min-h-screen bg-[#0D0B14] text-white font-sans selection:bg-accent selection:text-white">
-      {/* Page-level scroll progress bar */}
+    <div className="
+      min-h-screen
+      bg-background
+      text-foreground
+      font-sans
+      selection:bg-primary/40
+      overflow-hidden
+    ">
+
+      {/* Scroll progress */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-accent to-emerald-400 z-50 origin-left shadow-[0_0_12px_rgba(147,51,234,0.6)]"
+        className="
+          fixed top-0 left-0 right-0
+          h-1
+          bg-gradient-to-r
+          from-primary
+          via-highlight
+          to-secondary
+          z-50
+          origin-left
+        "
         style={{ scaleX }}
       />
 
+
       <Navbar />
 
-      <main className="pt-16 overflow-hidden">
-        {/* HERO SECTION */}
-        <div className="relative bg-[#FAFAFA] text-ink">
+
+      <main className="pt-16">
+
+
+        {/* Hero */}
+        <section className="
+          relative
+          bg-mesh-pattern
+          overflow-hidden
+        ">
           <HeroSection />
-        </div>
+        </section>
 
-        {/* FEATURED SECTIONS WITH DARK FUTURISTIC SHIULI AMBIENCE */}
-        <div className="relative bg-[#0D0B14] space-y-10 py-12">
-          {/* Story Section */}
-          <div className="relative z-10">
-            <StorySection />
+
+
+        {/* Main Content */}
+        <section className="
+          relative
+          bg-background
+          space-y-20
+          py-20
+        ">
+
+
+          <StorySection />
+
+
+          <div className="
+            mx-auto max-w-6xl px-6
+          ">
+            <div className="
+              h-px
+              bg-gradient-to-r
+              from-transparent
+              via-white/10
+              to-transparent
+            "/>
           </div>
 
-          <div className="relative z-10 mx-auto max-w-6xl px-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+          <ProjectsSection />
+
+
+          <AboutSection />
+
+
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="
+              h-px
+              bg-gradient-to-r
+              from-transparent
+              via-white/10
+              to-transparent
+            "/>
           </div>
 
-          {/* About Section */}
-          <div className="relative z-10">
-            <AboutSection />
+
+          <SkillsSection />
+
+
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="
+              h-px
+              bg-gradient-to-r
+              from-transparent
+              via-white/10
+              to-transparent
+            "/>
           </div>
 
-          <div className="relative z-10 mx-auto max-w-6xl px-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-          </div>
-
-          {/* Skills Section */}
-          <div className="relative z-10">
-            <SkillsSection />
-          </div>
-
-          <div className="relative z-10 mx-auto max-w-6xl px-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-          </div>
-
-          {/* Projects Section */}
-          <div className="relative z-10">
-            <ProjectsSection />
-          </div>
-
-          {/* Education Section */}
-          <div className="relative z-10">
-            <EducationSection />
-          </div>
-
-          <div className="relative z-10 mx-auto max-w-6xl px-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-          </div>
 
           
-        </div>
 
-        {/* CONTACT SECTION */}
-        <div className="relative z-10 bg-[#FAFAFA] text-ink">
+
+          <EducationSection />
+
+
+        </section>
+
+
+
+        {/* Contact */}
+        <section className="
+          bg-background
+          relative
+        ">
           <ContactSection />
-        </div>
+        </section>
+
+
       </main>
 
+
       <Footer />
+
+
     </div>
   )
 }
