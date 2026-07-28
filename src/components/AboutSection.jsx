@@ -4,11 +4,11 @@ import VersionTag from './VersionTag'
 
 function AboutSection() {
   return (
-    <section id="about" className="max-w-6xl mx-auto px-6 py-16">
+    <section id="about" className="max-w-6xl mx-auto px-6 py-10">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 border-b border-white/10 pb-6">
         <div>
-          <VersionTag version="v0.3" label="finding my footing" />
+          <VersionTag  label="finding my footing" />
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3">
             Philosophy & Mindset
           </h2>
@@ -114,4 +114,4 @@ function AboutSection() {
 
 export default AboutSection
 
-
+

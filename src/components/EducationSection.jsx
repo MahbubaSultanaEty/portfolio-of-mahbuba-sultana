@@ -16,7 +16,7 @@ function EducationSection() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 border-b border-white/10 pb-6">
         <div>
-          <VersionTag version="v0.5 → v0.6" label="foundations" />
+          <VersionTag  label="foundations" />
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3">
             Education & Learning Milestones
           </h2>

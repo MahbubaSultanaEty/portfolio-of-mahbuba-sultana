@@ -4,143 +4,280 @@ import { profile } from '../data/profile'
 
 function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
   }
 
   return (
-    <footer className="relative overflow-hidden border-t border-gray-200 bg-white px-6 pt-20 pb-10">
-      
-      {/* subtle background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-40 bg-purple-200/30 blur-3xl rounded-full" />
+    <footer className="
+      relative
+      overflow-hidden
+      border-t border-white/10
+      bg-[#071A1F]
+      px-6
+      py-10
+    ">
 
-      <div className="relative max-w-5xl mx-auto flex flex-col items-center text-center">
+      {/* Ambient glow */}
+      <div className="
+        absolute
+        -top-20
+        left-1/3
+        w-72
+        h-40
+        bg-emerald-400/10
+        blur-3xl
+        rounded-full
+      "/>
 
-        {/* Back to top */}
-        <button
-          onClick={scrollToTop}
-          className="
-            group mb-8 flex items-center justify-center
-            h-11 w-11 rounded-full
-            bg-white border border-gray-200
-            text-gray-500 shadow-sm
-            hover:border-purple-300
-            hover:text-purple-600
-            hover:-translate-y-1
-            transition-all duration-300
-          "
-          aria-label="Back to top"
-          title="Back to top"
-        >
-          <ArrowUp 
-            size={18}
-            className="group-hover:-translate-y-0.5 transition-transform"
-          />
-        </button>
+
+      <div className="
+        relative
+        max-w-6xl
+        mx-auto
+        flex
+        flex-col
+        md:flex-row
+        items-center
+        md:items-start
+        justify-between
+        gap-8
+      ">
 
 
         {/* Identity */}
-        <div className="flex items-center gap-2 mb-3">
-          <Sparkles 
-            size={15}
-            className="text-purple-500"
-          />
-          <p className="text-xs uppercase tracking-[0.25em] font-semibold text-purple-600">
-            Frontend Developer
-          </p>
-        </div>
+
+        <div className="max-w-sm text-center md:text-left">
+
+          <div className="
+            flex
+            items-center
+            justify-center
+            md:justify-start
+            gap-2
+            mb-3
+          ">
+            <Sparkles 
+              size={15}
+              className="text-emerald-400"
+            />
+
+            <span className="
+              text-xs
+              uppercase
+              tracking-[0.25em]
+              font-semibold
+              text-emerald-300
+            ">
+              Web Developer
+            </span>
+
+          </div>
 
 
-        <h3 className="text-2xl font-bold tracking-tight text-gray-900">
-          {profile.name}
-        </h3>
+          <h3 className="
+            text-2xl
+            font-black
+            text-white
+          ">
+            {profile.name}
+          </h3>
 
 
-        <p className="mt-3 max-w-md text-sm leading-relaxed text-gray-500">
-          Building modern web experiences with clean code, thoughtful design,
-          and a passion for creating meaningful digital products.
-        </p>
-
-
-        {/* Tech stack */}
-        <p className="mt-5 text-xs text-gray-400">
-          React • Next.js • JavaScript • Tailwind CSS
-        </p>
-
-
-        {/* Socials */}
-        <div className="flex items-center gap-3 mt-8">
-
-          <a
-            href={profile.socials.github}
-            target="_blank"
-            rel="noreferrer"
-            className="
-              h-10 w-10 flex items-center justify-center
-              rounded-full border border-gray-200
-              text-gray-500
-              hover:text-gray-900
-              hover:border-gray-400
-              hover:-translate-y-1
-              transition-all duration-300
-            "
-            aria-label="GitHub"
-          >
-            <BsGithub size={18} />
-          </a>
-
-
-          <a
-            href={profile.socials.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="
-              h-10 w-10 flex items-center justify-center
-              rounded-full border border-gray-200
-              text-gray-500
-              hover:text-purple-600
-              hover:border-purple-300
-              hover:-translate-y-1
-              transition-all duration-300
-            "
-            aria-label="LinkedIn"
-          >
-            <BsLinkedin size={18} />
-          </a>
-
-
-          <a
-            href={profile.socials.facebook}
-            target="_blank"
-            rel="noreferrer"
-            className="
-              h-10 w-10 flex items-center justify-center
-              rounded-full border border-gray-200
-              text-gray-500
-              hover:text-blue-600
-              hover:border-blue-300
-              hover:-translate-y-1
-              transition-all duration-300
-            "
-            aria-label="Facebook"
-          >
-            <BsFacebook size={18} />
-          </a>
+          
 
         </div>
 
 
-        {/* Bottom */}
-        <div className="mt-10 pt-6 w-full border-t border-gray-100">
-          <p className="text-xs text-gray-400">
-            © {new Date().getFullYear()} {profile.name}. All rights reserved.
+
+        {/* Stack */}
+
+        <div className="
+          text-center
+          md:text-left
+        ">
+
+          <p className="
+            text-xs
+            uppercase
+            tracking-widest
+            text-gray-500
+            mb-3
+          ">
+            Tech Stack
           </p>
 
-          <p className="mt-2 text-[11px] text-gray-400">
-            Designed & built with passion using Next.js
-          </p>
+
+          <div className="
+            flex
+            flex-wrap
+            justify-center
+            md:justify-start
+            gap-2
+          ">
+
+            {
+              [
+                'React',
+                'Next.js',
+                'JavaScript',
+                'Tailwind CSS'
+              ].map((tech)=>(
+                <span
+                  key={tech}
+                  className="
+                    badge
+                    bg-white/5
+                    border-white/10
+                    text-gray-300
+                    px-3
+                    py-3
+                  "
+                >
+                  {tech}
+                </span>
+              ))
+            }
+
+          </div>
+
         </div>
+
+
+
+        {/* Actions */}
+
+        <div className="
+          flex
+          flex-col
+          items-center
+          gap-5
+        ">
+
+
+          <div className="flex gap-3">
+
+            <a
+              href={profile.socials.github}
+              target="_blank"
+              rel="noreferrer"
+              className="
+                btn
+                btn-circle
+                bg-white/5
+                border-white/10
+                text-gray-300
+                hover:text-white
+                hover:bg-white/10
+              "
+            >
+              <BsGithub size={18}/>
+            </a>
+
+
+            <a
+              href={profile.socials.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="
+                btn
+                btn-circle
+                bg-white/5
+                border-white/10
+                text-gray-300
+                hover:text-emerald-300
+                hover:bg-white/10
+              "
+            >
+              <BsLinkedin size={18}/>
+            </a>
+
+
+            <a
+              href={profile.socials.facebook}
+              target="_blank"
+              rel="noreferrer"
+              className="
+                btn
+                btn-circle
+                bg-white/5
+                border-white/10
+                text-gray-300
+                hover:text-cyan-300
+                hover:bg-white/10
+              "
+            >
+              <BsFacebook size={18}/>
+            </a>
+
+          </div>
+
+
+
+          <button
+            onClick={scrollToTop}
+            className="
+              btn
+              btn-sm
+              rounded-full
+              bg-emerald-400
+              text-[#062015]
+              border-none
+              hover:bg-emerald-300
+              gap-2
+              font-bold
+            "
+          >
+            Back to top
+            <ArrowUp size={15}/>
+          </button>
+
+
+        </div>
+
 
       </div>
+
+
+
+      {/* Bottom line */}
+
+      <div className="
+        max-w-6xl
+        mx-auto
+        mt-8
+        pt-5
+        border-t
+        border-white/10
+        flex
+        flex-col
+        md:flex-row
+        justify-between
+        gap-2
+        text-center
+        md:text-left
+      ">
+
+        <p className="
+          text-xs
+          text-gray-500
+        ">
+          © {new Date().getFullYear()} {profile.name}. All rights reserved.
+        </p>
+
+
+        <p className="
+          text-xs
+          text-gray-500
+        ">
+          Designed & built with React.js
+        </p>
+
+      </div>
+
+
     </footer>
   )
 }
