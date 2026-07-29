@@ -354,38 +354,7 @@ function ProjectCard({ project, index = 0 }) {
 
 
 
-          <Link
-
-            to={`/projects/${project.slug}`}
-
-            className="
-            inline-flex
-            items-center
-            gap-2
-            text-sm
-            font-bold
-            text-emerald-600
-            hover:text-secondary
-            transition-all
-            group/link
-            "
-
-          >
-
-            View Technical Case Study
-
-            <ArrowRight
-
-              size={16}
-
-              className="
-              group-hover/link:translate-x-1
-              transition-transform
-              "
-
-            />
-
-          </Link>
+         
 
 
 

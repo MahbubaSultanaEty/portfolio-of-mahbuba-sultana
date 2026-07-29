@@ -1,88 +1,104 @@
-# ✦ Mahbuba Sultana — Portfolio
+# Mahbuba Sultana — Developer Portfolio
 
-🔗 Live Website: https://mahbuba-sultana.vercel.app/
+A personal portfolio site for **Mahbuba Sultana**, Web Developer having expertise in Frontend with React & Next.js. And working knowledge of backend APIs, databases, and full-stack development.
 
-A personal portfolio that represents more than just my projects — it reflects my perspective, my approach to problem-solving, and the way I combine code with aesthetics.
-
-## About This Portfolio
-
-I wanted this portfolio to represent the person behind the code.
-
-Instead of only showcasing technologies and projects, I focused on showing:
-
-- How I look at problems
-- How I approach challenges
-- How I think while building digital experiences
-
-Every section is designed to reflect my personality as a developer — my attention to detail, curiosity, and belief that meaningful products come from both thoughtful design and solid engineering.
+**Live site:** [https://mahbuba-sultana.vercel.app/](https://mahbuba-sultana.vercel.app/) 
 
 ---
 
-## The Evolution Behind This Portfolio
+## About
 
-The idea behind this portfolio was inspired by the way software evolves.
+This portfolio moves away from the typical "hero → about → skills → projects" template. Instead, the site is framed around a personal narrative — starting from how a chance moment with a Shiuli flower photo led into a self-taught path in web development — paired with a clean, dark, detail-driven visual style.
 
-Like a product that improves through different releases, this portfolio represents different stages of my growth, learning, and approach as a developer.
+Sections include:
 
-Each stage reflects a shift in mindset:
+- **Hero** — introduction, core tech stack preview, resume download, social links
+- **The Journey Into Code** — a four-part personal origin story
+- **Work Showcase** — featured projects in an interactive slider, each linking to a full case-study/detail page
+- **Philosophy & Mindset** — how the developer approaches UI craft and attention to detail
+- **Technical Stack & Skill Architecture** — categorized skills (Frontend / Backend / Tools), with proficiency detail for core categories
+- **Education & Learning Milestones** — academic background, technical coursework, and language certifications, grouped by category
+- **Contact** — direct email, phone, and WhatsApp contact options
 
-- Exploring the right direction and purpose
-- Building confidence through consistent learning
-- Developing a practical toolkit for creating products
-- Strengthening engineering fundamentals
-- Transforming knowledge into real-world applications
+## Tech Stack
 
-This approach helped me treat the portfolio as more than a collection of projects — it became a representation of my growth, decisions, and design thinking.
+- **React** (Vite)
+- **Tailwind CSS** — utility-first styling, custom theme tokens
+- **Motion** (Framer Motion / `motion`) — scroll-reveal and interaction animations throughout
+- **Swiper.js** — the featured projects slider
+- **React Router** — client-side routing for individual project detail pages
+- **Lucide React** — icon set
 
----
+## Project Structure
 
-## Design Philosophy
+```
+my-portfolio/
+├─ public/
+│  ├─ resume.pdf              # downloadable resume
+│  └─ (project & flower images)
+├─ src/
+│  ├─ app/
+│  │  └─ router.jsx           # route definitions (/ and /projects/:slug)
+│  ├─ components/             # section & UI components
+│  ├─ data/                   # profile, skills, education, and project content
+│  ├─ pages/
+│  │  ├─ HomePage.jsx
+│  │  └─ ProjectDetailPage.jsx
+│  ├─ index.css               # Tailwind import + theme tokens
+│  └─ main.jsx                # app entry point
+├─ package.json
+└─ vite.config.js
+```
 
-I believe development is not only about writing code.
+## Getting Started
 
-It is also about:
-
-- Understanding problems before solving them
-- Paying attention to small details
-- Creating experiences that feel intentional
-- Finding the balance between functionality and aesthetics
-
-This portfolio was designed to feel personal rather than following a typical developer portfolio template.
-
-The goal was to create an experience that reflects **how I think, how I build, and how I approach digital products.**
-
----
-
-## Built With
-
-- React.js
-- JavaScript (ES6+)
-- Tailwind CSS
-- React Router
-- Lucide Icons
-- React Icons
-- Vite
-
----
-
-## Features
-
-- Personal storytelling-driven design
-- Custom portfolio sections
-- Dynamic project showcase
-- Individual project detail pages
-- Responsive design
-- Smooth interactions and animations
-- Thoughtful UI details and micro-interactions
-
----
-
-## Run Locally
+**Prerequisites:** Node.js installed.
 
 ```bash
-git clone https://github.com/MahbubaSultanaEty/portfolio.git
-
+# install dependencies
 npm install
 
+# start the dev server
 npm run dev
+
+# build for production
+npm run build
+
+# preview the production build locally
+npm run preview
 ```
+
+The dev server runs at `http://localhost:5173` by default.
+
+## Deployment
+
+Deployed on **Vercel**. To deploy your own copy:
+
+```bash
+vercel --prod
+```
+
+Or connect the repository directly through the Vercel dashboard for automatic deployments on push.
+
+## Content
+
+Site content (name, bio, skills, education, and project details) lives in `src/data/` as plain JS objects/arrays — update those files to change site content without touching component code.
+
+## Featured Projects
+
+| Project | Stack | Live | Repo |
+|---|---|---|---|
+| **Rooted** | Next.js, Tailwind CSS, TanStack Query, Better Auth, Express.js, MongoDB | [Live](https://rooted-client.vercel.app/) | [GitHub](https://github.com/MahbubaSultanaEty/rooted-client) |
+| **SkillSwap** | Next.js, Tailwind CSS, MongoDB, Express.js, Stripe, JWT | [Live](https://skill-swap-by-mahbuba.vercel.app/) | [GitHub](https://github.com/MahbubaSultanaEty/skill-swap-client) |
+| **VolunTree** | Next.js, TypeScript, Tailwind CSS, HeroUI, Express.js, MongoDB | [Live](https://voluntree-built-with-hope.vercel.app/) | [GitHub](https://github.com/MahbubaSultanaEty/voluntree-client) |
+| **NexDrive** | Next.js, Tailwind CSS, HeroUI, Express.js, MongoDB, JWT | [Live](https://nex-drive-phi.vercel.app) | [GitHub](https://github.com/MahbubaSultanaEty/nexdrive-client) |
+
+## Contact
+
+- **Email:** sultanamahbuba09@gmail.com
+- **GitHub:** [github.com/MahbubaSultanaEty](https://github.com/MahbubaSultanaEty)
+- **LinkedIn:** [linkedin.com/in/mahbuba-sultana09](https://www.linkedin.com/in/mahbuba-sultana09/)
+
+---
+
+© 2026 Mahbuba Sultana. All rights reserved.

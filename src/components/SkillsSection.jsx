@@ -19,16 +19,7 @@ const sections = [
     description:
       "Primary expertise in crafting high-performance, responsive, and visually refined web applications. Driven by component modularity, fluid interactions, and modern UI systems.",
 
-    allSkills: skills?.frontend?.items || [
-      "React.js",
-      "Next.js",
-      "JavaScript (ES6+)",
-      "TypeScript",
-      "Tailwind CSS",
-      "DaisyUI",
-      "Framer Motion",
-      "Responsive UI",
-    ],
+    allSkills: skills?.frontend?.items 
   },
   {
     id: "backend",
@@ -40,14 +31,7 @@ const sections = [
     description:
       "Solid understanding of server-side architecture, designing clean RESTful APIs with Node.js & Express.js, handling database structures using MongoDB & Mongoose. Experienced in securing applications with modern authentication solutions like BetterAuth, JWT, and session management..",
     
-    allSkills: skills?.backend?.items || [
-      "Node.js",
-      "Express.js",
-      "RESTful APIs",      
-       "MongoDB",
-      "BetterAuth",
-      "JWT Authentication",
-    ],
+    allSkills: skills?.backend?.items 
   },
 
   {
@@ -60,16 +44,7 @@ const sections = [
     description:
       "Utilizing industry-standard development workflows to write clean, maintainable code, test API endpoints, and deploy applications to production smoothly.",
     
-    allSkills: skills?.tools?.items || [
-      "Git & GitHub",
-      "VS Code",
-      "Postman API",
-      "Vite",
-      "Vercel",
-      "Render",
-      "npm / Yarn",
-      "Chrome DevTools",
-    ],
+    allSkills: skills?.tools?.items 
   },
 ];
 
@@ -116,7 +91,7 @@ function SkillsSection() {
         </div>
       </motion.div>
 
-      {/* HORIZONTAL ROWS MATCHING THE SCREENSHOT UI */}
+      {/* HORIZONTAL ROWS  */}
       <div className="divide-y divide-white/10 border-y border-white/10 bg-[#0a0c10]/60 rounded-3xl overflow-hidden backdrop-blur-xl">
         {sections.map((section, index) => {
           const Icon = section.icon;

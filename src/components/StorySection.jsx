@@ -137,7 +137,7 @@ function StorySection() {
                   }}
                   className="
                   card
-                  bg-emerald-600/13
+                  bg-emerald-600/15
                   backdrop-blur-xl
                   border
                   border-white/10

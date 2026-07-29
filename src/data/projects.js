@@ -2,6 +2,7 @@ import rootedImg from '../assets/Rooted.png'
 import skillswapImg from '../assets/SkillSwap.png'
 import voluntreeImg from '../assets/voluntree.png'
 import nexdriveImg from '../assets/NexDrive.png'
+import tilesGalleryImg from '../assets/TilesGallery.png'
 
 export const projects = [
     {
@@ -101,5 +102,42 @@ export const projects = [
         "Introduce location-based search and availability tracking.",
         "Optimize performance and add more scalable rental management features.",
       ],
-    },
+  },
+  {
+  slug: "tiles-gallery",
+  name: "Tiles Gallery",
+  image: tilesGalleryImg,
+  featured: true,
+  live: "https://tiles-gallery-rho.vercel.app",
+  github: "https://github.com/MahbubaSultanaEty/tiles_gallery",
+  description:
+    "A modern tile showcase platform built with Next.js that allows users to explore premium ceramic, marble, porcelain, and designer tile collections through an elegant and responsive interface. The application includes authentication, protected routes, dynamic tile details, search functionality, profile management, and interactive visual elements.",
+  tech: [
+    "Next.js",
+    "React",
+    "SwiperJS",
+    "Lottie",
+    "Marquee",
+    "Tailwind CSS",
+    "DaisyUI",
+    "HeroUI",
+    "Better Auth",
+    "MongoDB",
+    
+  ],
+  challenges: [
+    "Building a premium product showcase experience with a strong focus on visual presentation, responsive layouts, and smooth interactions.",
+    "Implementing authentication workflows using Better Auth with Google OAuth and protected routes.",
+    "Creating dynamic tile detail pages with structured product information and seamless navigation.",
+    "Integrating Swiper sliders and Lottie animations to create engaging visual experiences without compromising performance.",
+    "Managing tile data efficiently with MongoDB while maintaining a clean and scalable application structure.",
+  ],
+  improvements: [
+    "Add advanced filtering options based on tile type, category, material, and design style.",
+    "Implement wishlist and favorite collection features for users.",
+    "Add a complete cart and checkout workflow for a real-world tile marketplace experience.",
+    "Introduce an admin dashboard for managing tile collections and product information.",
+    "Improve product visualization with richer previews and optimized image handling.",
+  ],
+},
   ]
