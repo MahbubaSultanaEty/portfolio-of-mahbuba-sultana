@@ -58,10 +58,10 @@ function StorySection() {
         <img
           src="/shiuly-1.png"
           alt=""
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-70"
         />
 
-        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-background/50" />
 
       </div>
 
@@ -87,19 +87,6 @@ function StorySection() {
               <span className="badge badge-success badge-outline">
                 My Journey
               </span>
-
-
-              <motion.div
-                animate={{ rotate:360 }}
-                transition={{
-                  duration:8,
-                  repeat:Infinity,
-                  ease:"linear"
-                }}
-              >
-                <Snowflake className="text-purple-300"/>
-              </motion.div>
-
             </div>
 
 
@@ -150,7 +137,7 @@ function StorySection() {
                   }}
                   className="
                   card
-                  bg-card/70
+                  bg-emerald-600/13
                   backdrop-blur-xl
                   border
                   border-white/10

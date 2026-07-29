@@ -4,16 +4,16 @@ export const skills = {
       note: "Primary focus",
       items: [
         "React.js", "Next.js", "JavaScript", "TypeScript",
-        "HTML", "CSS", "Tailwind CSS", "HeroUI",
-        "React Query", "Responsive Design",
+        "HTML", "CSS", "Tailwind CSS", "HeroUI","Framer Motion",
+        "TenStack Query","Stripe Integration", "Responsive Design",
       ],
     },
     backend: {
       heading: "Backend",
       note: "Strong Working understanding",
       items: [
-        "Node.js", "Express.js", "BetterAuth", "MongoDB", "Mongoose",
-        "REST APIs", "Authentication", "JWT", "Stripe Integration",
+        "Node.js", "Express.js", "BetterAuth","Middleware Design", "MongoDB", "Mongoose",
+        "REST APIs", "Authentication", "JWT", ,
       ],
     },
     tools: {

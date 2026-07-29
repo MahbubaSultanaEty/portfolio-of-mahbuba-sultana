@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileDown, ArrowRight } from "lucide-react";
+import { FileDown, ArrowRight, Sparkles, Code2 } from "lucide-react";
 import { profile } from "../data/profile";
 
 import { BsGithub } from "react-icons/bs";
@@ -21,599 +21,288 @@ import heroPhoto from "../assets/mahbuba-sultana.png";
 import Stats from "./Stats";
 
 function HeroSection() {
-  const floatingTech = [
+  const techStack = [
     {
-      icon: <SiJavascript className="text-[#F7DF1E]" size={22} />,
+      icon: (
+        <span className="text-[#F7DF1E]">
+          <SiJavascript size={18} />
+        </span>
+      ),
       label: "JavaScript",
-      pos: "-top-4 -left-6 sm:-left-10",
-      delay: 0,
     },
     {
-      icon: <SiBetterauth className="text-white" size={22} />,
-      label: "BetterAuth",
-      pos: "top-12 -left-6 sm:-left-10",
-      delay: 0.5,
-    },
-    {
-      icon: <SiReact className="text-[#61DAFB]" size={22} />,
+      icon: (
+        <span className="text-[#61DAFB]">
+          <SiReact size={18} />
+        </span>
+      ),
       label: "React.js",
-      pos: "top-10 -right-6 sm:-right-12",
-      delay: 1,
     },
     {
-      icon: <SiNextdotjs className="text-white" size={22} />,
+      icon: (
+        <span className="text-white">
+          <SiNextdotjs size={18} />
+        </span>
+      ),
       label: "Next.js",
-      pos: "bottom-16 -left-6 sm:-left-12",
-      delay: 1.5,
     },
     {
-      icon: <SiNodedotjs className="text-[#339933]" size={22} />,
-      label: "Node.js",
-      pos: "-bottom-6 right-2 sm:right-6",
-      delay: 2,
-    },
-    {
-      icon: <SiExpress className="text-white" size={22} />,
-      label: "Express.js",
-      pos: "top-1/2 -right-8 sm:-right-14",
-      delay: 0.8,
-    },
-    {
-      icon: <SiMongodb className="text-[#47A248]" size={22} />,
-      label: "MongoDB",
-      pos: "bottom-2 left-1/2",
-      delay: 2.5,
-    },
-    {
-      icon: <SiTailwindcss className="text-[#06B6D4]" size={22} />,
+      icon: (
+        <span className="text-[#06B6D4]">
+          <SiTailwindcss size={18} />
+        </span>
+      ),
       label: "Tailwind CSS",
-      pos: "top-1/2 -left-10",
-      delay: 1.8,
+    },
+    {
+      icon: (
+        <span className="text-[#339933]">
+          <SiNodedotjs size={18} />
+        </span>
+      ),
+      label: "Node.js",
+    },
+    {
+      icon: (
+        <span className="text-white">
+          <SiExpress size={18} />
+        </span>
+      ),
+      label: "Express.js",
+    },
+    {
+      icon: (
+        <span className="text-[#47A248]">
+          <SiMongodb size={18} />
+        </span>
+      ),
+      label: "MongoDB",
+    },
+    {
+      icon: (
+        <span className="text-emerald-400">
+          <SiBetterauth size={18} />
+        </span>
+      ),
+      label: "BetterAuth",
     },
   ];
 
   return (
-    <section
-      className="
-      relative
-      overflow-hidden
-      pt-20
-      pb-24
-      px-6
-      max-w-7xl
-      mx-auto
-      "
-    >
-      {/* Background Glow */}
+    <section className="relative min-h-screen bg-[#07080c] text-white overflow-hidden pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col justify-between">
+      {/* Ambient Background Lights */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none animate-glow" />
+      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div
-        className="
-        absolute
-        top-10
-        left-1/4
-        w-[500px]
-        h-[500px]
-        bg-primary/20
-        rounded-full
-        blur-[120px]
-        pointer-events-none
-        animate-glow
-        "
-      />
+      {/* Main Hero Content */}
+      <div className="relative z-10 my-auto py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+          
+          {/* LEFT DISPLAY HEADING */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-5 flex flex-col justify-center space-y-1 text-left z-20"
+          >
+            {/* Availability Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold tracking-wide w-fit mb-3"
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+              </span>
+              Available for Hire — Web Developer
+            </motion.div>
 
-      <div
-        className="
-        absolute
-        bottom-0
-        right-0
-        w-[450px]
-        h-[450px]
-        bg-secondary/10
-        rounded-full
-        blur-[120px]
-        pointer-events-none
-        animate-glow
-        "
-      />
+            {/* Giant Stacked Title */}
+            <h1 className="text-5xl sm:text-7xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.9] text-white">
+              BUILD
+            </h1>
+            <h1 className="text-5xl sm:text-7xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.9] text-transparent [-webkit-text-stroke:2px_#10b981] drop-shadow-[0_0_25px_rgba(16,185,129,0.2)] my-1">
+              DIGITAL
+            </h1>
+            <h1 className="text-5xl sm:text-7xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.9] text-white">
+              FUTURES
+            </h1>
 
-      <div
-        className="
-        grid
-        lg:grid-cols-12
-        gap-12
-        items-center
-        relative
-        z-10
-        "
+            <p className="text-xs uppercase tracking-[0.25em] font-bold text-slate-400 mt-4 flex items-center gap-2">
+              <Sparkles size={14} className="text-emerald-400" />
+              Building Modern Web Applications
+            </p>
+          </motion.div>
+
+          {/* CENTER PORTRAIT CARD */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="lg:col-span-3 flex flex-col items-center justify-center relative group py-4 lg:py-0"
+          >
+            {/* Outer Rotating Ring */}
+            <div className="absolute inset-[-14px] sm:inset-[-18px] border border-dashed border-emerald-500/30 rounded-[2.5rem] animate-spin-slow pointer-events-none" />
+
+            {/* Glow Aura */}
+            <div className="absolute inset-[-8px] bg-gradient-to-tr from-emerald-500/30 via-cyan-500/20 to-indigo-500/20 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
+
+            {/* Image Frame */}
+            <div className="w-56 h-72 sm:w-64 sm:h-80 lg:w-60 lg:h-80 xl:w-64 xl:h-88 rounded-[2rem] overflow-hidden border border-white/10 bg-slate-900/90 shadow-2xl relative z-10">
+              <img
+                src={heroPhoto}
+                alt={profile.name}
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 filter contrast-[1.05]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07080c] via-transparent to-transparent opacity-80" />
+            </div>
+
+            {/* Profile Center Badge */}
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="absolute -bottom-4 z-30 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#11131a]/95 border border-emerald-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-md text-xs font-semibold text-slate-200"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span className="font-bold text-white">{profile.name}</span>
+              <span className="text-slate-400">— {profile.title}</span>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT COLUMN DETAILS + RECRUITER-FRIENDLY TECH STACK */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-4 flex flex-col justify-center space-y-5 text-left z-20 pl-0 lg:pl-2"
+          >
+            {/* Headline */}
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+              Innovate. Develop. <br />
+              <span className="text-emerald-400">Succeed. Fast.</span>
+            </h2>
+
+            {/* Bio */}
+            <p className="text-sm text-slate-300 leading-relaxed">
+              Hi, I'm{" "}
+              <strong className="text-white font-bold">{profile.name}</strong>.{" "}
+              {profile.tagline}
+            </p>
+
+            {/* RECRUITER-FRIENDLY STRUCTURED TECH STACK PANEL */}
+            <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                  <Code2 size={14} /> Core Tech Stack
+                </span>
+                
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                {techStack.map((tech) => (
+                  <div
+                    key={tech.label}
+                    className="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-slate-900/90 border border-white/10 hover:border-emerald-500/40 hover:bg-slate-800 transition-all text-xs font-semibold text-slate-200"
+                  >
+                    {tech.icon}
+                    <span className="truncate">{tech.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <a
+                href="/resume.pdf"
+                download
+                className="btn btn-neutral bg-slate-800/90 hover:bg-slate-700 text-white border border-white/10 rounded-full px-6 py-3 text-xs sm:text-sm font-bold transition-all hover:scale-[1.03] active:scale-[0.98] shadow-lg inline-flex items-center gap-2 group"
+              >
+                <FileDown
+                  size={16}
+                  className="group-hover:translate-y-0.5 transition-transform text-emerald-400"
+                />
+                Download Resume
+              </a>
+
+              <a
+                href="#projects"
+                className="btn btn-outline border-emerald-500/80 hover:border-emerald-400 text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 rounded-full px-6 py-3 text-xs sm:text-sm font-bold transition-all hover:scale-[1.03] active:scale-[0.98] inline-flex items-center gap-2 group"
+              >
+                Explore Projects
+                <ArrowRight
+                  size={15}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* FOOTER BAR WITH ACCENT & SOCIAL CHIPS */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="relative z-10 pt-6 mt-4 border-t border-white/10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
       >
-        {/* LEFT CONTENT */}
+        <div className="md:col-span-7 flex flex-col gap-3">        
+          <div className="max-w-md">
+            <Stats />
+          </div>
+        </div>
 
-        <div
-          className="
-          lg:col-span-7
-          space-y-7
-          "
-        >
-          {/* Availability Badge */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 15,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-            }}
-            className="
-            inline-flex
-            items-center
-            gap-3
-            px-4
-            py-2
-            rounded-full
-            bg-primary/10
-            border
-            border-primary/20
-            text-primary
-            text-xs
-            font-bold
-            tracking-wide
-            "
-          >
-            <span
-              className="
-              relative
-              flex
-              h-2.5
-              w-2.5
-              "
-            >
-              <span
-                className="
-                absolute
-                inline-flex
-                h-full
-                w-full
-                rounded-full
-                bg-emerald-400
-                opacity-75
-                animate-ping
-                "
-              />
-
-              <span
-                className="
-                relative
-                inline-flex
-                rounded-full
-                h-2.5
-                w-2.5
-                bg-emerald-500
-                "
-              />
-            </span>
-            Available for Hire — Web Developer
-          </motion.div>
-
-          {/* Heading */}
-
-          <motion.h1
-            initial={{
-              opacity: 0,
-              y: 15,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 0.1,
-            }}
-            className="
-            text-4xl
-            sm:text-5xl
-            lg:text-6xl
-            font-black
-            text-foreground
-            tracking-tight
-            leading-[1.1]
-            "
-          >
-            Building Modern
-            <br />
-            <span
-              className="
-              bg-gradient-to-r
-              from-emerald-500
-              via-indigo-500
-              to-emerald-700
-              bg-clip-text
-              text-transparent
-              
-              "
-            >
-              Web Applications
-            </span>
-          </motion.h1>
-
-          {/* Description */}
-
-          <motion.p
-            initial={{
-              opacity: 0,
-              y: 15,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 0.2,
-            }}
-            className="
-            text-lg
-            md:text-xl
-            text-muted
-            leading-relaxed
-            max-w-xl
-            "
-          >
-            Hi, I'm{" "}
-            <strong
-              className="
-              text-foreground
-              font-extrabold
-              "
-            >
-              {profile.name}
-            </strong>
-            . {profile.tagline}
-          </motion.p>
-          {/* ACTION BUTTONS */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 15,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 0.3,
-            }}
-            className="
-            flex
-            flex-wrap
-            items-center
-            gap-4
-            pt-2
-            "
-          >
-            <a
-              href="/resume.pdf"
-              download
-              className="
-              inline-flex
-              items-center
-              gap-2.5
-              bg-emerald-700
-              text-white
-              px-8
-              py-4
-              rounded-full
-              font-bold
-              text-sm
-              transition-all
-              shadow-[0_0_30px_rgba(124,58,237,0.35)]
-              hover:-translate-y-1
-              hover:bg-emerald-600
-              group
-              "
-            >
-              <FileDown
-                size={18}
-                className="
-                group-hover:translate-y-1
-                transition-transform
-                "
-              />
-              Download Resume
-            </a>
-
-            <a
-              href="#projects"
-              className="
-              inline-flex
-              items-center
-              gap-2.5
-              border
-              border-white/20
-              text-foreground
-              px-8
-              py-4
-              rounded-full
-              font-bold
-              text-sm
-              transition-all
-              hover:bg-white/10
-              hover:-translate-y-1
-              group
-              "
-            >
-              Explore Projects
-              <ArrowRight
-                size={16}
-                className="
-                group-hover:translate-x-1
-                transition-transform
-                "
-              />
-            </a>
-          </motion.div>
-
-          <Stats/>
-
-          {/* SOCIAL LINKS */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 0.4,
-            }}
-            className="
-            flex
-            items-center
-            gap-5
-            pt-6
-            border-t
-            border-white/10
-            "
-          >
-            <span
-              className="
-              text-xs
-              uppercase
-              tracking-[0.2em]
-              font-bold
-              text-muted
-              "
-            >
-              Connect:
-            </span>
-
+        <div className="md:col-span-5 flex flex-col md:items-end gap-2.5">
+          <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400">
+            Connect
+          </span>
+          <div className="flex flex-wrap items-center gap-2">
             <a
               href={profile.socials.github}
               target="_blank"
               rel="noreferrer"
-              className="
-              p-2.5
-              rounded-full
-              text-muted
-              hover:text-white
-              hover:bg-white/10
-              transition-all
-              hover:scale-110
-              "
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 hover:bg-emerald-500/10 text-xs font-semibold text-slate-300 hover:text-white transition-all hover:scale-105 group"
             >
-              <BsGithub size={22} />
+              <span className="text-slate-300 group-hover:text-emerald-400 transition-colors">
+                <BsGithub size={16} />
+              </span>
+              <span>Github</span>
             </a>
 
             <a
               href={profile.socials.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="
-              p-2.5
-              rounded-full
-              text-muted
-              hover:text-primary
-              hover:bg-white/10
-              transition-all
-              hover:scale-110
-              "
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 hover:bg-emerald-500/10 text-xs font-semibold text-slate-300 hover:text-white transition-all hover:scale-105 group"
             >
-              <LiaLinkedin size={26} />
+              <span className="text-slate-300 group-hover:text-emerald-400 transition-colors">
+                <LiaLinkedin size={18} />
+              </span>
+              <span>Linkedin</span>
             </a>
 
             <a
               href={profile.socials.facebook}
               target="_blank"
               rel="noreferrer"
-              className="
-              p-2.5
-              rounded-full
-              text-muted
-              hover:text-primary
-              hover:bg-white/10
-              transition-all
-              hover:scale-110
-              "
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 hover:bg-emerald-500/10 text-xs font-semibold text-slate-300 hover:text-white transition-all hover:scale-105 group"
             >
-              <FaFacebook size={22} />
+              <span className="text-slate-300 group-hover:text-emerald-400 transition-colors">
+                <FaFacebook size={16} />
+              </span>
+              <span>Facebook</span>
             </a>
-          </motion.div>
-        </div>
-
-        {/* RIGHT PROFILE CARD */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            scale: 0.9,
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{
-            duration: 0.7,
-            delay: 0.2,
-          }}
-          className="
-          lg:col-span-5
-          flex
-          justify-center
-          relative
-          "
-        >
-          <div
-            className="
-            relative
-            flex
-            items-center
-            justify-center
-            "
-          >
-            {/* Outer rotating ring */}
-
-            <div
-              className="
-              absolute
-              inset-[-18px]
-              sm:inset-[-24px]
-              border
-              border-dashed
-              border-primary/40
-              rounded-[2rem]
-              animate-spin-slow
-              "
-            />
-
-            {/* Glow */}
-
-            <div
-              className="
-              absolute
-              inset-[-10px]
-              bg-gradient-to-tr
-              from-primary
-              via-purple-500
-              to-secondary
-              rounded-[2rem]
-              blur-xl
-              opacity-30
-              animate-pulse
-              "
-            />
-
-            {/* Image Card */}
-
-            <div
-              className="
-              w-64
-              h-80
-              sm:w-72
-              sm:h-[420px]
-              rounded-3xl
-              overflow-hidden
-              border
-              border-white/10
-              shadow-2xl
-              relative
-              z-10
-              bg-card
-              group
-              "
-            >
-              <img
-                src={heroPhoto}
-                alt={profile.name}
-                className="
-                w-full
-                h-full
-                object-cover
-                object-top
-                group-hover:scale-105
-                transition-transform
-                duration-700
-                "
-              />
-
-              <div
-                className="
-                absolute
-                inset-0
-                bg-gradient-to-t
-                from-black/50
-                via-transparent
-                to-transparent
-                "
-              />
-            </div>
-
-            {/* Floating Tech Badges */}
-
-            {floatingTech.map((tech, i) => (
-              <motion.div
-                key={tech.label}
-                initial={{
-                  y: 0,
-                }}
-                animate={{
-                  y: [0, -8, 0],
-                }}
-                transition={{
-                  duration: 3 + i * 0.4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: tech.delay,
-                }}
-                className={`
-                absolute
-                ${tech.pos}
-
-                z-20
-
-                hidden
-                sm:flex
-
-                items-center
-                gap-2.5
-
-                px-4
-                py-2.5
-
-                rounded-2xl
-
-                bg-card/90
-                backdrop-blur-xl
-
-                border
-                border-white/10
-
-                shadow-xl
-
-                text-xs
-                font-bold
-                text-foreground
-
-                hover:scale-105
-                transition-transform
-                `}
-              >
-                {tech.icon}
-
-                <span>{tech.label}</span>
-              </motion.div>
-            ))}
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 }

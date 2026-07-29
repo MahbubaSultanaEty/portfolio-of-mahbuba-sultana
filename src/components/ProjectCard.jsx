@@ -33,7 +33,7 @@ function ProjectCard({ project, index = 0 }) {
 
       className="
       group
-      bg-card/70
+      bg-emerald-600/10
       backdrop-blur-xl
       rounded-3xl
       border
@@ -114,27 +114,6 @@ function ProjectCard({ project, index = 0 }) {
           "
 
         >
-
-          <span
-
-            className="
-            text-xs
-            font-medium
-            text-primary
-            bg-primary/10
-            border
-            border-primary/20
-            px-3
-            py-1
-            rounded-full
-            backdrop-blur-md
-            "
-
-          >
-
-            Case Study
-
-          </span>
 
 
         </div>
@@ -356,7 +335,7 @@ function ProjectCard({ project, index = 0 }) {
                   bg-white/5
                   border
                   border-white/10
-                  text-primary
+                  text-emerald-500
                   "
 
                 >
