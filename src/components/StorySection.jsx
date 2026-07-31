@@ -59,7 +59,7 @@ function StorySection() {
       mx-auto
       px-6
       md:py-24
-      py-10
+      py-
       overflow-hidden
       "
     >
