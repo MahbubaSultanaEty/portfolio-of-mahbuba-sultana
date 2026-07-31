@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MessageCircle, Copy, Check, Sparkles, ArrowUpRight } from 'lucide-react'
+import {
+  Mail,
+  Phone,
+  MessageCircle,
+  Copy,
+  Check,
+  ArrowUpRight
+} from 'lucide-react'
 import { profile } from '../data/profile'
 
 function ContactSection() {
@@ -14,7 +21,7 @@ function ContactSection() {
   }
 
   return (
-    <section id="contact" className="max-w-6xl mx-auto px-6 py-24">
+    <section id="contact" className="max-w-6xl mx-auto px-4 sm:px-6 py-24">
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -22,153 +29,161 @@ function ContactSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
         className="
-          card bg-[#071A1F] 
-          rounded-[2.5rem]
-          overflow-hidden
-          shadow-2xl
-          border border-white/10
           relative
+          overflow-hidden
+          rounded-[2rem]
+          bg-[#071A1F]
+          border border-white/10
+          px-6
+          py-12
+          sm:px-10
+          lg:px-16
         "
       >
 
-        {/* Ambient Lights */}
         <div className="
-          absolute -top-32 -right-20 
-          w-96 h-96 
-          bg-emerald-400/20 
+          absolute
+          -top-24
+          left-1/2
+          -translate-x-1/2
+          h-72
+          w-72
+          bg-emerald-400/20
           blur-[100px]
-        "/>
-
-        <div className="
-          absolute -bottom-32 -left-20 
-          w-96 h-96 
-          bg-cyan-400/10 
-          blur-[100px]
-        "/>
+        " />
 
 
-        <div className="
-          card-body
-          grid md:grid-cols-2
-          gap-12
-          p-8 md:p-14
-          relative z-10
-        ">
+        <div className="relative z-10 text-center">
+
+          <p className="
+            text-xs
+            uppercase
+            tracking-[0.35em]
+            text-emerald-300
+            font-semibold
+            mb-5
+          ">
+            Contact
+          </p>
 
 
-          {/* Left Content */}
-
-          <div className="space-y-6">
-
-            <div className="badge badge-lg bg-emerald-400/10 text-emerald-300 border border-emerald-400/20 gap-2">
-              <Sparkles size={14}/>
-              Open for opportunities
-            </div>
-
-
-            <h2 className="
-              text-4xl md:text-5xl 
-              font-black 
-              text-white 
-              leading-tight
-            ">
-              Let's create something
-              <span className="text-emerald-400">
-                {" "}meaningful
-              </span>
-              together.
-            </h2>
+          <h2 className="
+            text-3xl
+            sm:text-5xl
+            font-black
+            text-white
+            leading-tight
+          ">
+            Let's build something
+            <span className="text-emerald-400">
+              {" "}useful.
+            </span>
+          </h2>
 
 
-            <p className="
-              text-gray-300
-              leading-relaxed
-              max-w-md
-              text-base md:text-lg
-            ">
-              Whether it's a new project, collaboration, or a developer
-              opportunity — I would love to hear about it.
-              My inbox is always open.
-            </p>
-
-
-            <div className="
-              inline-flex items-center gap-2
-              text-sm
-              text-emerald-300
-              bg-emerald-400/10
-              px-4 py-2
-              rounded-full
-              border border-emerald-400/20
-            ">
-              <Sparkles size={15}/>
-              Usually replies within 24 hours
-            </div>
-
-          </div>
+          <p className="
+            max-w-xl
+            mx-auto
+            mt-5
+            text-gray-400
+            text-sm
+            sm:text-base
+            leading-relaxed
+          ">
+            Have a project idea, collaboration opportunity,
+            or just want to discuss web development?
+            Feel free to reach out.
+          </p>
 
 
 
-          {/* Right Contact Card */}
+          {/* Contact Options */}
 
           <div className="
-            bg-white/5
-            backdrop-blur-md
-            rounded-3xl
-            border border-white/10
-            p-6
-            space-y-5
+            mt-10
+            grid
+            grid-cols-1
+            sm:grid-cols-3
+            gap-4
           ">
-
-
-            <h3 className="text-white font-bold text-xl">
-              Let's connect
-            </h3>
-
 
 
             {/* Email */}
 
             <div className="
-              flex items-center justify-between
-              bg-black/20
               rounded-2xl
-              px-4 py-3
+              border border-white/10
+              bg-white/5
+              p-5
+              text-left
             ">
 
-              <a
-                href={`mailto:${profile.email}`}
-                className="
-                  flex items-center gap-3
-                  text-gray-200
-                  hover:text-emerald-300
-                  transition
-                  text-sm
-                "
-              >
-                <Mail size={18} className="text-emerald-400"/>
-                {profile.email}
-              </a>
+              <Mail className="text-emerald-400 mb-4" size={22}/>
 
+              <p className="text-xs text-gray-500 mb-2">
+                Email
+              </p>
 
-              <button
-                onClick={handleCopyEmail}
-                className="
-                  btn btn-sm btn-circle
-                  bg-white/10
-                  border-none
-                  text-white
-                  hover:bg-emerald-400/20
-                "
-              >
-                {
-                  copied
-                  ? <Check size={16}/>
-                  : <Copy size={16}/>
-                }
-              </button>
+              <div className="flex items-center gap-2">
+
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="
+                    text-sm
+                    text-gray-200
+                    truncate
+                    hover:text-emerald-300
+                  "
+                >
+                  {profile.email}
+                </a>
+
+                <button
+                  onClick={handleCopyEmail}
+                  className="text-gray-400 hover:text-white shrink-0"
+                >
+                  {
+                    copied
+                    ? <Check size={15}/>
+                    : <Copy size={15}/>
+                  }
+                </button>
+
+              </div>
 
             </div>
+
+
+
+            {/* Phone */}
+
+            <div className="
+              rounded-2xl
+              border border-white/10
+              bg-white/5
+              p-5
+              text-left
+            ">
+
+              <Phone className="text-cyan-400 mb-4" size={22}/>
+
+              <p className="text-xs text-gray-500 mb-2">
+                Phone
+              </p>
+
+              <a
+                href={`tel:${profile.phone}`}
+                className="
+                  text-sm
+                  text-gray-200
+                  hover:text-white
+                "
+              >
+                {profile.phone}
+              </a>
+
+            </div>
+
 
 
 
@@ -179,43 +194,39 @@ function ContactSection() {
               target="_blank"
               rel="noreferrer"
               className="
-                btn
-                w-full
                 rounded-2xl
                 bg-emerald-400
+                p-5
+                text-left
                 text-[#062015]
-                border-none
-                hover:bg-emerald-300
-                font-bold
-              "
-            >
-              <MessageCircle size={19}/>
-              Message on WhatsApp
-              <ArrowUpRight size={17}/>
-            </a>
-
-
-
-            {/* Phone */}
-
-            <a
-              href={`tel:${profile.phone}`}
-              className="
-                flex items-center gap-3
-                text-gray-300
-                hover:text-white
+                flex
+                flex-col
+                justify-between
                 transition
-                px-2
+                hover:bg-emerald-300
               "
             >
-              <Phone 
-                size={18}
-                className="text-cyan-400"
-              />
 
-              <span>
-                {profile.phone}
-              </span>
+              <MessageCircle size={22}/>
+
+
+              <div className="flex items-center justify-between mt-8">
+
+                <div>
+                  <p className="text-xs opacity-70">
+                    Quick chat
+                  </p>
+
+                  <p className="font-bold">
+                    WhatsApp
+                  </p>
+                </div>
+
+
+                <ArrowUpRight size={20}/>
+
+              </div>
+
 
             </a>
 
@@ -223,7 +234,17 @@ function ContactSection() {
           </div>
 
 
+          <p className="
+            mt-8
+            text-xs
+            text-gray-500
+          ">
+            Usually replies within 24 hours
+          </p>
+
+
         </div>
+
 
       </motion.div>
 
