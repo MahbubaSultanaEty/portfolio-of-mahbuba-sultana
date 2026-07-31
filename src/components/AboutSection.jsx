@@ -9,7 +9,7 @@ const reveal = {
 
 function AboutSection() {
   return (
-    <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-slate-100 overflow-hidden">
+    <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-20 py-10 text-slate-100 overflow-hidden">
       {/* HEADER SECTION */}
       <motion.div
         variants={reveal}

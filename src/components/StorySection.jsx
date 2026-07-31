@@ -58,7 +58,8 @@ function StorySection() {
       max-w-7xl
       mx-auto
       px-6
-      py-24
+      md:py-24
+      py-10
       overflow-hidden
       "
     >

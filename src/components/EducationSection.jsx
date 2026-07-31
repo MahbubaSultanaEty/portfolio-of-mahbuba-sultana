@@ -48,7 +48,7 @@ function EducationSection() {
   const rightColumn = [allItems[2], allItems[3]];
 
   return (
-    <section id="education" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-slate-100">
+    <section id="education" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-20 py-12 text-slate-100">
       {/* HEADER WITH CIRCULAR EMBLEM & TITLE (Matching Screenshot UI) */}
       <motion.div
         variants={reveal}
