@@ -26,6 +26,7 @@ Sections include:
 - **Tailwind CSS** — utility-first styling, custom theme tokens
 - **Motion** (Framer Motion / `motion`) — scroll-reveal and interaction animations throughout
 - **Swiper.js** — the featured projects slider
+- **GSAP** — the skills section scrolltrigger card stacking animation
 - **React Router** — client-side routing for individual project detail pages
 - **Lucide React** — icon set
 

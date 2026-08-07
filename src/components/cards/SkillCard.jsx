@@ -5,22 +5,21 @@ function SkillCard({section, varients, index, Icon}) {
   return (
     <div
   key={section.id}
-  
-  
 className="
-  
   w-full
   flex items-center
   border border-gray-200/80
-  bg-white/80
+  bg-white
+  pb-20
+  md:pb-2
   backdrop-blur-xl
-  rounded-3xl
   overflow-hidden
   shadow-[0_20px_60px_rgba(0,0,0,0.08)]
   
 "
 >
-   <div className="
+      <div className="
+   
     grid grid-cols-1 lg:grid-cols-12
     gap-8 lg:gap-12
     w-full
@@ -29,7 +28,7 @@ className="
   ">
 
     {/* IMAGE */}
-    <div className="lg:col-span-5">
+    <div className="lg:col-span-2">
       <div className="
         relative overflow-hidden mx-auto rounded-3xl group
       ">
@@ -37,11 +36,9 @@ className="
           src={section.image}
           alt={section.title}
           className="
-            w-full
-            h-[320px]
-            sm:h-[420px]
-            lg:h-[520px]
-            object-cover
+            w-40
+            h-40
+            object-contain
             transition-transform duration-700
             group-hover:scale-105
           "
@@ -65,7 +62,7 @@ className="
 
     {/* CONTENT */}
     <div className="
-      col-span-7
+      col-span-10
       space-y-5
     ">
       <h3 className="
@@ -104,12 +101,11 @@ className="
             key={skill}
             className="
               px-4 py-2
-              rounded-full
-              border border-gray-200
-              bg-gray-50
+               border-2  rounded-tr-[1.75rem] rounded-bl-[1.75rem] border-gray-200
+              bg-black
               text-sm
               font-medium
-              text-gray-700
+              text-white
               hover:bg-black
               hover:text-white
               transition-colors duration-300

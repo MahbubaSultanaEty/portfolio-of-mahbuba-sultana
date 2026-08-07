@@ -1,15 +1,17 @@
 .skills-scroll-wrapper .content {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .skills-scroll-wrapper .content--sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  
   align-items: center;
   justify-content: center;
+  z-index: 1;
+  transform-origin: bottom bottom;
+  will-change: transform;
 }
 
 .skills-scroll-wrapper .content__inner {

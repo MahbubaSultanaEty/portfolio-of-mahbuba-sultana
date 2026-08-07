@@ -14,9 +14,9 @@ function SkillsSection() {
   return () => cleanup && cleanup()
 }, [])
   return (
-    <section
+    <section 
       id="skills"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-slate-100"
+      className="  py-12 md:py-16 text-slate-100"
     >
       {/* SECTION HEADER */}
       <div
@@ -25,6 +25,7 @@ function SkillsSection() {
           justify-between items-start md:items-end 
           gap-6 mb-12 
           border-b border-white/10 
+          px-4 sm:px-6 lg:px-8
           pb-8
         "
       >
@@ -112,7 +113,7 @@ function SkillsSection() {
 
 
       {/* CODROPS STICKY SKILL SCENES */}
- <div className="skills-scroll-wrapper">
+ <div className="skills-scroll-wrapper ">
 
   {sections.map((section, index) => {
 
@@ -150,6 +151,7 @@ function SkillsSection() {
       {/* SHIULI FLOWER CARD */}
       <div
         className="
+        px-4 sm:px-6 lg:px-8
           mt-10 
           bg-slate-900/60 
           border border-emerald-500/20 

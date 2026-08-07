@@ -5,34 +5,39 @@ gsap.registerPlugin(ScrollTrigger)
 
 export function initSkillsScroll() {
   const cards = gsap.utils.toArray(".skills-scroll-wrapper .content")
-
   const triggers = []
 
   cards.forEach((card, index) => {
     const inner = card.querySelector(".content__inner")
     if (!inner) return
 
-    // Pin each card while it's "current"
-    const pin = ScrollTrigger.create({
-      trigger: card,
-      start: "top top",
-      end: () => (index < cards.length - 1 ? "bottom top" : "+=1"),
-      pin: ".content--sticky",
-      pinSpacing: false,
-    })
-    triggers.push(pin)
+    const isLast = index === cards.length - 1
 
-    // As the NEXT card scrolls over this one, fade/scale this one down
-    if (index < cards.length - 1) {
+    card.style.zIndex = index + 1
+
+    if (!isLast) {
+      // ১. Pinning Trigger: কার্ডের সম্পূর্ণ কন্টেন্ট শেষ হওয়ার পর পিন স্টার্ট হবে
+      const pin = ScrollTrigger.create({
+        trigger: card,
+        // কন্টেন্ট বড় হলে 'bottom bottom' ব্যবহার করা হয় যাতে ইউজার শেষ পর্যন্ত স্ক্রল করতে পারে
+        start: "bottom bottom", 
+        endTrigger: ".skills-scroll-wrapper",
+        end: "bottom bottom",
+        pin: true,
+        pinSpacing: false,
+      })
+      triggers.push(pin)
+
+      // ২. Fade Effect: পরবর্তী কার্ড আসার সময় স্কেলিং
       const fade = gsap.to(inner, {
-        scale: 0.92,
-        opacity: 0.35,
-        filter: "blur(2px)",
+        scale: 0.9,
+        opacity: 0.2,
+        filter: "blur(4px)",
         ease: "none",
         scrollTrigger: {
           trigger: cards[index + 1],
-          start: "top bottom",
-          end: "top top",
+          start: "top bottom", // পরের কার্ড নিচে দেখা যাওয়া মাত্রই
+          end: "top top",      // পরের কার্ড পুরোপুরি ঢেকে ফেললে
           scrub: true,
         },
       })
@@ -42,7 +47,6 @@ export function initSkillsScroll() {
 
   ScrollTrigger.refresh()
 
-  // cleanup function — call this on unmount to avoid duplicate triggers
   return () => {
     triggers.forEach((t) => t && t.kill())
   }
