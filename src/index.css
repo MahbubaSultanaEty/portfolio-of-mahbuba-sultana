@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import "./skills.css";
 
 @theme {
   --color-background: #050816;
@@ -52,6 +53,8 @@ body {
     "Segoe UI",
     sans-serif;
 }
+
+
 
 
 /* Better text selection */
@@ -253,4 +256,6 @@ body {
     #818CF8;
 
 }
+
+
 

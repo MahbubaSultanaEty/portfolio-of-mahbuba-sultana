@@ -19,6 +19,7 @@ import {
 
 import heroPhoto from "../assets/mahbuba-sultana.png";
 import Stats from "./Stats";
+import HeroSectionBtns from "./btns/HeroSectionBtns";
 
 function HeroSection() {
   const techStack = [
@@ -219,29 +220,10 @@ function HeroSection() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
-              <a
-                href="/resume.pdf"
-                download
-                className="btn btn-neutral bg-slate-800/90 hover:bg-slate-700 text-white border border-white/10 rounded-full px-6 py-3 text-xs sm:text-sm font-bold transition-all hover:scale-[1.03] active:scale-[0.98] shadow-lg inline-flex items-center gap-2 group"
-              >
-                <FileDown
-                  size={16}
-                  className="group-hover:translate-y-0.5 transition-transform text-emerald-400"
-                />
-                Download Resume
-              </a>
+            <div >
+          
+<HeroSectionBtns/>
 
-              <a
-                href="#projects"
-                className="btn btn-outline border-emerald-500/80 hover:border-emerald-400 text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 rounded-full px-6 py-3 text-xs sm:text-sm font-bold transition-all hover:scale-[1.03] active:scale-[0.98] inline-flex items-center gap-2 group"
-              >
-                Explore Projects
-                <ArrowRight
-                  size={15}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </a>
             </div>
           </motion.div>
         </div>
