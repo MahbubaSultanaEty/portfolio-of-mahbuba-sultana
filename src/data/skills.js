@@ -6,7 +6,7 @@ export const sections = [
   {
     id: "frontend",
     number: "01",
-    title: "Web Development & Frontend Engineering",
+    title: "Frontend Web Engineering",
     icon: Layout,
     subtitle: "Building modern interfaces with component-driven architecture",
     image: frontendImg,
