@@ -10,7 +10,7 @@ className="
   flex items-center
   border border-gray-200/80
   bg-white
-  pb-20
+  pb-25
   md:pb-2
   backdrop-blur-xl
   overflow-hidden
@@ -36,8 +36,8 @@ className="
           src={section.image}
           alt={section.title}
           className="
-            w-40
-            h-40
+            w-60
+            h-60
             object-contain
             transition-transform duration-700
             group-hover:scale-105

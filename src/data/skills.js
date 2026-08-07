@@ -27,7 +27,7 @@ export const sections = [
     subtitle: "Designing APIs, authorization, Data modeling and application logic",
     image: backendImg,
     description:
-      "Solid understanding of server-side architecture, designing clean RESTful APIs with Node.js & Express.js, handling database structures using MongoDB & Mongoose. Experienced in securing applications with modern authentication solutions like BetterAuth, JWT, and session management..",
+      "Solid understanding of server-side architecture, designing clean RESTful APIs with Node.js & Express.js, handling database structures using MongoDB & Mongoose. Experienced in securing applications with modern authentication solutions like BetterAuth, JWT, and session management.",
     
     allSkills:[
         "Node.js", "Express.js", "BetterAuth","Middleware Design", "MongoDB", "Mongoose",
