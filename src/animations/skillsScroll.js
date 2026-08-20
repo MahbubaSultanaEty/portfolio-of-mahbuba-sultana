@@ -55,7 +55,11 @@ export function initSkillsScroll() {
         opacity: 0.2,
         filter: "blur(4px)",
         ease: "none",
+
+
+
         scrollTrigger: {
+
           trigger: cards[index + 1],
           start: "top bottom",
           end: "top top",
