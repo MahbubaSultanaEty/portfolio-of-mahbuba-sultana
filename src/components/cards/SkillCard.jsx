@@ -1,124 +1,141 @@
-import React from 'react'
+import React from "react";
+import { Card } from "@heroui/react";
 
-function SkillCard({section, varients, index, Icon}) {
+
+function SkillCard({ section, Icon }) {
   return (
-    <div
-      key={section.id}
+    <Card
       className="
         w-full
-        flex items-center
-        border border-gray-200/80
-        bg-white
-        pb-25
-        md:pb-2
-        backdrop-blur-xl
+        h-full
+        border border-white/10
+        bg-black/40
+        backdrop-blur-2xl
+        shadow-[0_20px_80px_rgba(0,0,0,0.35)]
         overflow-hidden
-        shadow-[0_20px_60px_rgba(0,0,0,0.08)]
       "
     >
-      <div className="
-        grid grid-cols-1 lg:grid-cols-12
-        gap-8 lg:gap-12
-        w-full
-        p-6 sm:p-10 lg:p-16
-        items-center
-      ">
+      <Card.Content
+        className="
+          flex
+          flex-col
+          items-center
+          text-center
+          w-full
+          p-2
+          sm:p-5
+          lg:p-10
+        "
+      >
 
-        {/* IMAGE (শুধুমাত্র এই অংশটি সেন্টারে আনা হয়েছে) */}
-        <div className="w-full lg:col-span-4 xl:col-span-3 flex justify-center items-center">
-          <div className="
-            relative overflow-hidden rounded-3xl group
-            w-[200px] h-[200px] sm:w-[240px] sm:h-[240px]
+        {/* IMAGE */}
+        <div
+          className="
+            relative
+            w-[220px]
+            h-[220px]
+            sm:w-[260px]
+            sm:h-[260px]
+            md:w-[280px]
+            md:h-[280px]
+            lg:w-[300px]
+            lg:h-[300px]
             flex-shrink-0
-          ">
-            <img
-              src={section.image}
-              alt={section.title}
-              className="
-                w-full
-                h-full
-                object-cover
-                transition-transform duration-700
-                group-hover:scale-105
-              "
-            />
+            overflow-visible
+          "
+        >
+          <img
+            src={section.image}
+            alt={section.title}
+            className="
+              w-full
+              h-full
+              object-contain
+              scale-125
+              transition-transform
+              duration-700
+              hover:scale-[1.35]
+            "
+          />
 
-            <div className="
-              absolute bottom-4 left-4
-              w-10 h-10 sm:w-12 sm:h-12
-              rounded-2xl
-              bg-black
-              text-white
-              flex items-center justify-center
+          {/* ICON */}
+          <div
+            className="
+              absolute
+              bottom-2
+              left-2
+              sm:bottom-4
+              sm:left-4
+              w-10
+              h-10
+              rounded-2xl           
+              border
+              border-white/20
+              backdrop-blur-xl
+              text-green-400
+              flex
+              items-center
+              justify-center
               z-10
-            ">
-              <Icon size={20}/>
-            </div>
+            "
+          >
+            <Icon size={20} />
           </div>
         </div>
 
 
-        {/* CONTENT (আগের মতোই লেফট-অ্যালাইন রাখা হয়েছে) */}
-        <div className="
-          lg:col-span-8 xl:col-span-9
-          space-y-5
-        ">
-          <h3 className="
-            text-3xl
-            sm:text-4xl
-            lg:text-5xl
-            font-black
-            tracking-tight
-            text-black
-          ">
-            {section.title}
-          </h3>
+        {/* CONTENT */}
+        <div className="w-full mt-2 sm:mt-6">
 
-          <p className="
-            text-base
-            sm:text-lg
-            text-gray-600
-            leading-relaxed
-          ">
-            {section.description}
-          </p>
-                  
+          <Card.Header className="p-0">
+            <Card.Title
+              className="
+                text-2xl
+                sm:text-3xl
+                leading-normal
+                font-black
+                tracking-tight
+                text-white
+              "
+            >
+              {section.title}
+            </Card.Title>
+
+            <Card.Description
+              className="
+                mt-3
+                text-sm
+                sm:text-base
+                text-gray-400
+                leading-relaxed
+                max-w-2xl
+                mx-auto
+              "
+            >
+              {section.description}
+            </Card.Description>
+          </Card.Header>
+
+
           {/* SKILLS */}
-          <div className="
-            lg:col-span-3
-            flex
-            lg:justify-end
-          ">
-            <div className="
-              flex flex-wrap
-              gap-2
-              lg:justify-end
-            ">
-              {section.allSkills.map((skill)=>(
-                <span
-                  key={skill}
-                  className="
-                    px-4 py-2
-                    border-2 rounded-tr-[1.75rem] rounded-bl-[1.75rem] border-gray-200
-                    bg-black
-                    text-sm
-                    font-medium
-                    text-white
-                    hover:bg-black
-                    hover:text-white
-                    transition-colors duration-300
-                  "
-                >
-                  {skill}
-                </span>
-              ))}
+          <Card.Footer
+            className="
+              p-0
+              mt-5
+              sm:mt-6
+              justify-center
+            "
+          >
+            <div className="w-full flex justify-center">
+              
             </div>
-          </div>
+          </Card.Footer>
+
         </div>
 
-      </div>
-    </div>
-  )
+      </Card.Content>
+    </Card>
+  );
 }
 
-export default SkillCard
+export default SkillCard;

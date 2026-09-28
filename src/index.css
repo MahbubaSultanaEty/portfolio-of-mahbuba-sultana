@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @import "./skills.css";
+@import "@heroui/styles"; 
 
 @theme {
   --color-background: #050816;

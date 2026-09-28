@@ -88,7 +88,7 @@ function HomePage() {
           <ProjectsSection />
 
 
-          <AboutSection />
+          <SkillsSection />
 
 
           <div className="mx-auto max-w-6xl px-6">
@@ -102,7 +102,7 @@ function HomePage() {
           </div>
 
 
-          <SkillsSection />
+          <AboutSection />
 
 
           <div className="mx-auto max-w-6xl px-6">
