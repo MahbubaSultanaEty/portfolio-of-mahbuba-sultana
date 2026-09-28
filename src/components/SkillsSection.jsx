@@ -16,11 +16,11 @@ function SkillsSection() {
       <div className="mb-10 flex flex-col items-start justify-between gap-6 border-b border-white/10 pb-8 md:mb-12 lg:flex-row lg:items-end">
         <div className="min-w-0">
           <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-emerald-400">
-            <Code2 size={14} /> Technical Expertise
+            <Code2 size={14} /> Architecture Expertise
           </span>
 
           <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl">
-            Technical Stack & Skill Architecture
+            Skill Architecture
           </h2>
 
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">

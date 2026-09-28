@@ -164,7 +164,7 @@ function Navbar() {
             md:flex
           ">
 
-            <a
+            {/* <a
               href="/resume.pdf"
               target="_blank"
               rel="noreferrer"
@@ -186,7 +186,7 @@ function Navbar() {
               <FileText size={15}/>
               Resume
 
-            </a>
+            </a> */}
 
           </div>
 
@@ -283,7 +283,7 @@ function Navbar() {
                   }
 
 
-                  <a
+                  {/* <a
                     href="/resume.pdf"
                     target="_blank"
                     rel="noreferrer"
@@ -299,7 +299,7 @@ function Navbar() {
                     "
                   >
                     Download Resume
-                  </a>
+                  </a> */}
 
 
                 </div>

@@ -8,6 +8,7 @@ import EducationSection from '../components/EducationSection'
 import ProjectsSection from '../components/ProjectSection'
 import ContactSection from '../components/ContactSection'
 import Footer from '../components/Footer'
+import TechStack from '../components/TeckStack'
 
 function HomePage() {
   const { scrollYProgress } = useScroll()
@@ -59,6 +60,8 @@ function HomePage() {
           <HeroSection />
         </section>
 
+        <TechStack/>
+
 
 
         {/* Main Content */}
@@ -70,8 +73,11 @@ function HomePage() {
         ">
 
 
-          <StorySection />
+          <ProjectsSection />
 
+
+          <SkillsSection />
+          
 
           <div className="
             mx-auto max-w-6xl px-6
@@ -85,10 +91,8 @@ function HomePage() {
             "/>
           </div>
 
-          <ProjectsSection />
 
-
-          <SkillsSection />
+<StorySection />
 
 
           <div className="mx-auto max-w-6xl px-6">

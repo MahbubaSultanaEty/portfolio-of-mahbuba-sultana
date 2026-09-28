@@ -17,32 +17,14 @@ function Stats() {
         delay: 0.45,
       }}
       className="
-  grid
-  grid-cols-3
-  gap-3
+    text-center
   pt-4
   max-w-xl
   "
     >
-      {[
-        {
-    value: "08+",
-    title: "Projects Built",
-    subtitle: "Real-world applications"
-  },
-  {
-    value: "10+",
-   title: "Months Coding",
-   subtitle: "Continuous learning journey"
-  },
-  {
-    value: "10+",
-    title: "Technologies",
-    subtitle: "Modern web stack"
-  }
-      ].map((stat) => (
+    
         <div
-          key={stat.title}
+         
           className="
       group
       rounded-2xl
@@ -68,7 +50,7 @@ function Stats() {
         text-transparent
         "
           >
-            {stat.value}
+           1+
           </h3>
 
           <p
@@ -79,7 +61,7 @@ function Stats() {
         mt-1
         "
           >
-            {stat.title}
+          Year Coding
           </p>
 
           <p
@@ -88,10 +70,10 @@ function Stats() {
         text-muted
         "
           >
-            {stat.subtitle}
+           Continuous learning journey
           </p>
         </div>
-      ))}
+    
     </motion.div>
   );
 }
