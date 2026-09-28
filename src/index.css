@@ -55,7 +55,28 @@ body {
     sans-serif;
 }
 
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255 255 255 / 0.05);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: rgb(203 213 225);
+  transition-property: all;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.social-link:hover {
+  border-color: rgb(16 185 129 / 0.5);
+  background-color: rgb(16 185 129 / 0.1);
+  color: white;
+}
 
 
 /* Better text selection */

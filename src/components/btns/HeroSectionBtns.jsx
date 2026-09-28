@@ -6,13 +6,12 @@ function HeroSectionBtns() {
     <div className="flex flex-wrap md:flex-col items-center gap-3 pt-1">
 
 {/* Download Resume */}
-<a 
+{/* <a 
   href="/resume.pdf" 
   download 
   className="group relative overflow-hidden inline-flex items-center justify-center btn btn-neutral bg-slate-800/90 hover:bg-slate-700 text-white border border-white/10 rounded-full px-6 py-3 text-xs sm:text-sm font-bold shadow-lg"
 >
   <span className="inline-flex gap-2 items-center justify-center">
-    {/* icon-er wrapper: width 0 theke expand hobe, and clip kore rakhbe */}
     <span className="overflow-hidden w-0 group-hover:w-5 transition-[width] duration-300 ease-[cubic-bezier(0.75,0,0.125,1)] flex items-center justify-center">
       <FileDown 
         size={16} 
@@ -21,7 +20,7 @@ function HeroSectionBtns() {
     </span>
     <span>Download Resume</span>
   </span>
-</a>
+</a> */}
 
 {/* Explore Projects */}
 <a 

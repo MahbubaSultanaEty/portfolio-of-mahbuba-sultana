@@ -346,11 +346,8 @@ function HeroSection() {
             <div>
               <h1
                 className="
-                  text-5xl
-                  sm:text-6xl
-                  md:text-6xl
+                  text-5xl                 
                   lg:text-7xl
-                  xl:text-8xl
                   font-black
                   tracking-tight
                   leading-[0.95]
@@ -398,95 +395,39 @@ function HeroSection() {
 
 
             {/* Social Links */}
-            <div
-              className="
-                flex
-                flex-wrap
-                items-center
-                gap-3
-              "
-            >
-              <a
-                href={profile.socials.github}
-                target="_blank"
-                rel="noreferrer"
-                className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  px-4
-                  py-2.5
-                  rounded-xl
-                  bg-white/5
-                  border
-                  border-white/10
-                  hover:border-emerald-500/50
-                  hover:bg-emerald-500/10
-                  text-sm
-                  font-semibold
-                  text-slate-300
-                  hover:text-white
-                  transition-all
-                "
-              >
-                <BsGithub size={18} />
-                Github
-              </a>
+<div className="flex flex-wrap items-center gap-3">
 
-              <a
-                href={profile.socials.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  px-4
-                  py-2.5
-                  rounded-xl
-                  bg-white/5
-                  border
-                  border-white/10
-                  hover:border-emerald-500/50
-                  hover:bg-emerald-500/10
-                  text-sm
-                  font-semibold
-                  text-slate-300
-                  hover:text-white
-                  transition-all
-                "
-              >
-                <LiaLinkedin size={20} />
-                Linkedin
-              </a>
+  <a
+    href={profile.socials.github}
+    target="_blank"
+    rel="noreferrer"
+    className="social-link"
+  >
+    <BsGithub size={18} />
+    Github
+  </a>
 
-              <a
-                href={profile.socials.facebook}
-                target="_blank"
-                rel="noreferrer"
-                className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  px-4
-                  py-2.5
-                  rounded-xl
-                  bg-white/5
-                  border
-                  border-white/10
-                  hover:border-emerald-500/50
-                  hover:bg-emerald-500/10
-                  text-sm
-                  font-semibold
-                  text-slate-300
-                  hover:text-white
-                  transition-all
-                "
-              >
-                <FaFacebook size={18} />
-                Facebook
-              </a>
-            </div>
+  <a
+    href={profile.socials.linkedin}
+    target="_blank"
+    rel="noreferrer"
+    className="social-link"
+  >
+    <LiaLinkedin size={20} />
+    Linkedin
+  </a>
+
+  <a
+    href={profile.socials.facebook}
+    target="_blank"
+    rel="noreferrer"
+    className="social-link"
+  >
+    <FaFacebook size={18} />
+    Facebook
+  </a>
+
+</div>
           </motion.div>
         </div>
       </div>
