@@ -16,3 +16,21 @@
 .skills-scroll-wrapper .content__inner {
   width: 100%;
 }
+
+
+/* ── Story Section Scroll Stack ── */
+
+.story-scroll-wrapper .story-card {
+  position: relative;
+  min-height: 100vh;
+}
+
+.story-scroll-wrapper .story-card__inner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  transform-origin: center top;
+  will-change: transform, opacity, filter;
+}

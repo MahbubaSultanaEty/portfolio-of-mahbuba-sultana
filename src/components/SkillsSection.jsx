@@ -5,14 +5,10 @@ import { sections } from "../data/skills";
 
 import shiuliImg from "/shiuly-3.jpg";
 import SkillCard from "./cards/SkillCard";
-import { useEffect } from "react";
-import { initSkillsScroll } from "../animations/skillsScroll";
+
 
 function SkillsSection() {
- useEffect(() => {
-  const cleanup = initSkillsScroll()
-  return () => cleanup && cleanup()
-}, [])
+
   return (
     <section 
       id="skills"
