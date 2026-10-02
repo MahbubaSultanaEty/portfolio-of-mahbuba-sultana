@@ -103,7 +103,7 @@ function EducationSection() {
 
                 {/* Content */}
                 <div className="space-y-1.5 flex-1">
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-col sm:flex-row items-center gap-2">
                     <span className="text-xs font-mono text-slate-400 font-semibold">
                       {item.period}
                     </span>

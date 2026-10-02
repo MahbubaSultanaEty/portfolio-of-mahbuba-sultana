@@ -47,6 +47,7 @@ function Footer() {
         grid-cols-1
         md:grid-cols-3
         items-center
+       
         md:items-start
         gap-8
         "
@@ -55,11 +56,16 @@ function Footer() {
 
         {/* Identity */}
 
-        <div
+<div className="
+          flex
+          flex-col
+          items-center">
+  <div
           className="
           max-w-sm
           text-center
-          md:text-left
+          md:text-left       
+         
           "
         >
 
@@ -108,6 +114,8 @@ function Footer() {
 
 
         </div>
+</div>
+        
 
 
 

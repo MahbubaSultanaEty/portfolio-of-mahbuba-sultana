@@ -16,6 +16,16 @@
   --color-highlight: #F59E0B;
 }
 
+.skills-swiper .swiper-pagination-bullet {
+  background: rgb(148 163 184);
+  opacity: 0.5;
+}
+
+.skills-swiper .swiper-pagination-bullet-active {
+  background: rgb(52 211 153);
+  opacity: 1;
+}
+
 .bg-grid {
   background-image:
     linear-gradient(

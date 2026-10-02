@@ -1,140 +1,51 @@
 import React from "react";
-import { Card } from "@heroui/react";
-
 
 function SkillCard({ section, Icon }) {
+  const skills = section.allSkills ?? [];
+
   return (
-    <Card
-      className="
-        w-full
-        h-full
-        border border-white/10
-        bg-black/40
-        backdrop-blur-2xl
-        shadow-[0_20px_80px_rgba(0,0,0,0.35)]
-        overflow-hidden
-      "
-    >
-      <Card.Content
-        className="
-          flex
-          flex-col
-          items-center
-          text-center
-          w-full
-          p-2
-          sm:p-5
-          lg:p-10
-        "
-      >
+    <article className="group flex h-full min-h-[280px] flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 shadow-xl backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/20 hover:shadow-emerald-950/20 sm:min-h-[300px]">
+      {/* IMAGE */}
+      <div className="relative h-36 w-full shrink-0 overflow-hidden sm:h-40">
+        <img
+          src={section.image}
+          alt={section.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
 
-        {/* IMAGE */}
-        <div
-          className="
-            relative
-            w-[220px]
-            h-[220px]
-            sm:w-[260px]
-            sm:h-[260px]
-            md:w-[280px]
-            md:h-[280px]
-            lg:w-[300px]
-            lg:h-[300px]
-            flex-shrink-0
-            overflow-visible
-          "
-        >
-          <img
-            src={section.image}
-            alt={section.title}
-            className="
-              w-full
-              h-full
-              object-contain
-              scale-125
-              transition-transform
-              duration-700
-              hover:scale-[1.35]
-            "
-          />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-          {/* ICON */}
-          <div
-            className="
-              absolute
-              bottom-2
-              left-2
-              sm:bottom-4
-              sm:left-4
-              w-10
-              h-10
-              rounded-2xl           
-              border
-              border-white/20
-              backdrop-blur-xl
-              text-green-400
-              flex
-              items-center
-              justify-center
-              z-10
-            "
-          >
-            <Icon size={20} />
+        {/* ICON */}
+        <div className="absolute bottom-3 left-3 flex h-8 w-8 items-center justify-center rounded-xl border border-white/20 bg-black/30 text-emerald-400 backdrop-blur-md sm:h-9 sm:w-9">
+          <Icon size={16} className="sm:h-[18px] sm:w-[18px]" />
+        </div>
+      </div>
+
+      {/* CONTENT */}
+      <div className="flex flex-1 flex-col p-4 text-left sm:p-5">
+        <h3 className="text-base font-bold tracking-tight text-white sm:text-lg">
+          {section.title}
+        </h3>
+
+        <p className="mt-2 line-clamp-4 text-xs leading-relaxed text-slate-400 sm:text-sm">
+          {section.description}
+        </p>
+
+        {/* SKILLS */}
+        {skills.length > 0 && (
+          <div className="mt-auto flex flex-wrap gap-1.5 pt-4">
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                className="rounded-md border border-emerald-400/20 bg-emerald-400/5 px-2 py-1 text-[10px] font-medium text-emerald-300 sm:text-xs"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
-        </div>
-
-
-        {/* CONTENT */}
-        <div className="w-full mt-2 sm:mt-6">
-
-          <Card.Header className="p-0">
-            <Card.Title
-              className="
-                text-2xl
-                sm:text-3xl
-                leading-normal
-                font-black
-                tracking-tight
-                text-white
-              "
-            >
-              {section.title}
-            </Card.Title>
-
-            <Card.Description
-              className="
-                mt-3
-                text-sm
-                sm:text-base
-                text-gray-400
-                leading-relaxed
-                max-w-2xl
-                mx-auto
-              "
-            >
-              {section.description}
-            </Card.Description>
-          </Card.Header>
-
-
-          {/* SKILLS */}
-          <Card.Footer
-            className="
-              p-0
-              mt-5
-              sm:mt-6
-              justify-center
-            "
-          >
-            <div className="w-full flex justify-center">
-              
-            </div>
-          </Card.Footer>
-
-        </div>
-
-      </Card.Content>
-    </Card>
+        )}
+      </div>
+    </article>
   );
 }
 

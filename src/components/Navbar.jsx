@@ -1,322 +1,167 @@
-import { useState } from 'react'
-import { Menu, X, FileText, Sparkles } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import avatarImg from '../assets/avatar.png'
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import avatarImg from "../assets/avatar.png";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { href: '#story', label: 'Story' },
-     { href: '#projects', label: 'Projects' },
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#education', label: 'Education' },  
-    { href: '#contact', label: 'Contact' },
-  ]
+    { href: "#story", label: "Story" },
+    { href: "#projects", label: "Projects" },
+    { href: "#about", label: "About" },
+    { href: "#skills", label: "Skills" },
+    { href: "#education", label: "Education" },
+    { href: "#contact", label: "Contact" },
+  ];
 
   return (
-    <header
-      className="
-        fixed
-        top-4
-        left-0
-        w-full
-        z-40
-        px-4
-      "
-    >
-
-      <div
-        className="
-          max-w-6xl
-          mx-auto
-          rounded-2xl
-          border
-          border-gray-200/80
-          bg-white/80
-          backdrop-blur-xl
-          shadow-lg
-        "
-      >
-
-        <div
-          className="
-            flex
-            items-center
-            justify-between
-            px-5
-            py-3
-          "
-        >
-
-
-          {/* Brand */}
-
-          <a
-            href="#"
-            className="flex items-center gap-3 group"
-          >
-
-            <div className="
-              relative
-            ">
+    <header className="fixed left-0 top-4 z-40 w-full px-4">
+      <div className="mx-auto w-full max-w-6xl rounded-2xl border border-gray-200/80 bg-white/80 shadow-lg backdrop-blur-xl">
+        {/* NAVBAR */}
+        <div className="flex items-center justify-between px-4 py-3 sm:px-5">
+          {/* BRAND */}
+          <a href="#" className="group flex items-center gap-3">
+            <div className="relative shrink-0">
               <img
                 src={avatarImg}
                 alt="Mahbuba Sultana"
                 className="
-                  w-10
-                  h-10
+                  h-9 w-9
                   rounded-full
+                  border-2 border-emerald-400/40
                   object-cover
-                  border-2
-                  border-emerald-400/40
-                  group-hover:scale-105
                   transition
+                  group-hover:scale-105
+                  sm:h-10 sm:w-10
                 "
               />
 
-              <span className="
-                absolute
-                -bottom-1
-                -right-1
-                w-3
-                h-3
-                rounded-full
-                bg-emerald-400
-                border-2
-                border-white
-              "/>
-
+              <span
+                className="
+                  absolute
+                  -bottom-1
+                  -right-1
+                  h-3
+                  w-3
+                  rounded-full
+                  border-2
+                  border-white
+                  bg-emerald-400
+                "
+              />
             </div>
 
-
-            <div>
-
-              <h1 className="
+            <h1
+              className="
+                text-sm
                 font-black
-                text-gray-900
-                text-base
                 leading-none
-                group-hover:text-emerald-600
+                text-gray-900
                 transition
-              ">
-                Mahbuba Sultana
-              </h1>
-      
-
-            </div>
-
-
+                group-hover:text-emerald-600
+                sm:text-base
+              "
+            >
+              Mahbuba Sultana
+            </h1>
           </a>
 
-
-
-
-          {/* Desktop Navigation */}
-
+          {/* DESKTOP NAVIGATION */}
           <nav
             className="
               hidden
-              md:flex
               items-center
               gap-1
-              bg-gray-50
               rounded-full
+              bg-gray-50
               px-2
               py-1
+              md:flex
             "
           >
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="
+                  rounded-full
+                  px-3
+                  py-1.5
+                  text-sm
+                  font-medium
+                  text-gray-600
+                  transition-all
+                  hover:bg-white
+                  hover:text-emerald-600
+                  hover:shadow-sm
+                "
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-            {
-              links.map((link)=>(
+          {/* DESKTOP RIGHT SIDE */}
+          <div className="hidden md:block" />
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            className="
+              flex
+              h-9
+              w-9
+              items-center
+              justify-center
+              rounded-full
+              border-none
+              bg-gray-100
+              text-emerald-600
+              transition
+              hover:bg-emerald-50
+              md:hidden
+            "
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+
+        {/* MOBILE MENU */}
+        {isOpen && (
+          <div className="border-t border-gray-200 md:hidden">
+            <nav className="flex flex-col gap-1 px-4 pb-4 pt-3">
+              {links.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={() => setIsOpen(false)}
                   className="
-                    px-3
-                    py-1.5
-                    rounded-full
+                    block
+                    rounded-xl
+                    px-4
+                    py-3
                     text-sm
                     font-medium
-                    text-gray-600
-                    hover:bg-white
+                    text-gray-700
+                    transition
+                    hover:bg-emerald-50
                     hover:text-emerald-600
-                    hover:shadow-sm
-                    transition-all
+                    active:bg-emerald-100
                   "
                 >
                   {link.label}
                 </a>
-              ))
-            }
-
-          </nav>
-
-
-
-
-
-          {/* Resume */}
-
-          <div className="
-            hidden
-            md:flex
-          ">
-
-            {/* <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              download
-              className="
-                btn
-                btn-sm
-                rounded-full
-                bg-emerald-500
-                text-white
-                border-none
-                px-5
-                hover:bg-emerald-600
-                gap-2
-                shadow-md
-              "
-            >
-
-              <FileText size={15}/>
-              Resume
-
-            </a> */}
-
+              ))}
+            </nav>
           </div>
-
-
-
-
-          {/* Mobile Button */}
-
-          <button
-            onClick={()=>setIsOpen(!isOpen)}
-            className="
-              md:hidden
-              btn
-              btn-circle
-              btn-sm
-              bg-gray-100
-              text-emerald-600
-              border-none
-            "
-          >
-            {
-              isOpen
-              ? <X size={20}/>
-              : <Menu size={20}/>
-            }
-          </button>
-
-
-        </div>
-
-
-
-
-        {/* Mobile Menu */}
-
-        <AnimatePresence>
-
-          {
-            isOpen && (
-
-              <motion.div
-
-                initial={{
-                  opacity:0,
-                  height:0
-                }}
-
-                animate={{
-                  opacity:1,
-                  height:'auto'
-                }}
-
-                exit={{
-                  opacity:0,
-                  height:0
-                }}
-
-                className="
-                  md:hidden
-                  border-t
-                  border-gray-200
-                  px-5
-                  pb-5
-                  overflow-hidden
-                "
-              >
-
-                <div className="
-                  pt-4
-                  flex
-                  flex-col
-                  gap-2
-                ">
-
-                  {
-                    links.map((link)=>(
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        onClick={()=>setIsOpen(false)}
-                        className="
-                          px-4
-                          py-3
-                          rounded-xl
-                          text-gray-700
-                          hover:bg-emerald-50
-                          hover:text-emerald-600
-                          transition
-                        "
-                      >
-                        {link.label}
-                      </a>
-                    ))
-                  }
-
-
-                  {/* <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    download
-                    className="
-                      mt-2
-                      text-center
-                      rounded-xl
-                      py-3
-                      bg-emerald-500
-                      text-white
-                      font-semibold
-                    "
-                  >
-                    Download Resume
-                  </a> */}
-
-
-                </div>
-
-
-              </motion.div>
-
-            )
-          }
-
-        </AnimatePresence>
-
-
+        )}
       </div>
-
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
